@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0623D5BC-B66D-4A50-8627-C20D77384DFB}</ProjectGuid>
+    <ProjectGuid>{DB03B226-42A9-41DB-90C9-392EC9C3B008}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>presentacion</RootNamespace>
-    <AssemblyName>presentacion</AssemblyName>
+    <RootNamespace>WindowsFormsAppTP1</RootNamespace>
+    <AssemblyName>WindowsFormsAppTP1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,19 +52,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAgregarArticulo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAgregarArticulo.Designer.cs">
-      <DependentUpon>frmAgregarArticulo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="..\..\articulo\presentacion\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAgregarArticulo.resx">
-      <DependentUpon>frmAgregarArticulo.cs</DependentUpon>
+      <Link>Form1.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,11 +82,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dominio\dominio.csproj">
-      <Project>{7d5d4059-e646-4a1b-b3a4-e2ad90fe5842}</Project>
+      <Project>{d2885b59-0312-44d3-bb7f-41d7978b71d1}</Project>
       <Name>dominio</Name>
     </ProjectReference>
     <ProjectReference Include="..\negocio\negocio.csproj">
-      <Project>{00b11f7f-465c-41ce-858f-ec46b6ae4fb2}</Project>
+      <Project>{487abf94-9d34-46be-b960-8edf7f81e25c}</Project>
       <Name>negocio</Name>
     </ProjectReference>
   </ItemGroup>
