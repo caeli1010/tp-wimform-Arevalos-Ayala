@@ -18,7 +18,7 @@ namespace negocio
             try
             {
                 datos.setearConsulta("select A.Codigo, A.Nombre, A.Descripcion, " +
-                    "M.Descripcion AS Marca, C.Descripcion AS Categoria, A.ImagenUrl as Imagen, A.Precio " +
+                    "M.Descripcion AS Marca, C.Descripcion AS Categoria, A.ImagenUrl, A.Precio " +
                     "FROM ARTICULOS AS A " +
                     "JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria " +
                     "JOIN MARCAS AS M ON M.Id = A.IdMarca");
@@ -32,8 +32,7 @@ namespace negocio
                     aux.Marca = (string)datos.Lector.GetString(3);
                     aux.Categoria = (string)datos.Lector.GetString(4);
                     aux.UrlImagen = (string)datos.Lector.GetString(5);
-                    //aux.Precio = (decimal)datos.Lector.GetDecimal(6);
-                    aux.Precio = decimal.Round(datos.Lector.GetDecimal(6), 2, MidpointRounding.AwayFromZero);
+                    aux.Precio = (decimal)datos.Lector.GetDecimal(6);
                     lista.Add(aux);
 
                 }
