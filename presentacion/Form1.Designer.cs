@@ -45,9 +45,10 @@
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(32, 66);
+            this.lblFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.Location = new System.Drawing.Point(31, 59);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(29, 13);
+            this.lblFiltro.Size = new System.Drawing.Size(54, 25);
             this.lblFiltro.TabIndex = 0;
             this.lblFiltro.Text = "Filtro";
             // 
@@ -78,7 +79,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(400, 376);
+            this.btnEliminar.Location = new System.Drawing.Point(391, 376);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(96, 34);
             this.btnEliminar.TabIndex = 4;
@@ -87,16 +88,17 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(214, 376);
+            this.btnListar.Location = new System.Drawing.Point(206, 376);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(96, 34);
             this.btnListar.TabIndex = 5;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(54, 376);
+            this.btnAgregar.Location = new System.Drawing.Point(35, 376);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(96, 34);
             this.btnAgregar.TabIndex = 6;

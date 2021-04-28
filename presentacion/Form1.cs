@@ -30,7 +30,7 @@ namespace presentacion
 
         private void frmCatalogo_Load(object sender, EventArgs e)
         {
-            cargarGrilla();
+            
         }
 
         private void cargarGrilla()
@@ -66,6 +66,11 @@ namespace presentacion
         private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            cargarGrilla();
         }
     }
 }
