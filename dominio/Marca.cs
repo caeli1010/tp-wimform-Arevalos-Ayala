@@ -23,6 +23,7 @@ namespace dominio
         public override string ToString()
         {
             return Nombre;
+
         }
     }
 }
