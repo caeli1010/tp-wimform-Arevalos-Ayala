@@ -48,5 +48,85 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+        public void agregar(Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string valores = "values('"+nuevo.Codigo+"', '" +nuevo.Nombre+"', '"+ nuevo.Descripcion+"', '"+nuevo.UrlImagen+"', "+nuevo.Precio+")";
+                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, ImagenUrl, Precio) " + valores);
+                datos.ejecutarAccion();
+
+            }
+            catch (global::System.Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void modificar(Articulo modificar)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string set = "Codigo ='" + modificar.Codigo + "', Nombre = '" + modificar.Nombre + "', Descripcion = '" + modificar.Descripcion + "', ImagenUrl = '" + modificar.UrlImagen + "', Precio = " + modificar.Precio + "";
+                datos.setearConsulta("UPDATE ARTICULOS SET Descripcion = '" + modificar.Nombre + "' WHERE Codigo =" + modificar.Codigo + "");
+                datos.ejecutarAccion();
+
+            }
+            catch (global::System.Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void eliminar(string codigo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("delete from ARTICULOS where Codigo = '" + codigo + "'");
+                datos.ejecutarAccion();
+
+            }
+            catch (global::System.Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+        public void leerArticulo(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select * from ARTICULOS where id = " + id + "");
+                datos.ejecutarLectura();
+
+            }
+            catch (global::System.Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
     }
 }
