@@ -63,11 +63,7 @@ namespace presentacion
             RecargarImg(seleccionado.UrlImagen);
         }
 
-        private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+     
         private void btnListar_Click(object sender, EventArgs e)
         {
             cargarGrilla();

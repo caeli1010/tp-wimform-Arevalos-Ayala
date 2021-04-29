@@ -13,6 +13,7 @@ namespace presentacion
 {
     public partial class frmAgregarArticulo : Form
     {
+       
         public frmAgregarArticulo()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace presentacion
                 nuevo.Codigo = txtCodigo.Text;
                 nuevo.Nombre = txtNombre.Text;
                 nuevo.Descripcion = txtDescripcion.Text;
-                //nuevo.Marca = (string)cbxMarca.SelectedItem;
+                nuevo.Marca = (string)cbxMarca.SelectedItem;
                 //nuevo.Categoria = (string)cbxCategoria.SelectedItem;
                 nuevo.UrlImagen = txtImagen.Text;
                //nuevo.Precio = (decimal)txtPrecio.Text;
@@ -61,6 +62,29 @@ namespace presentacion
                 //Si es Enter y no se ingresaron caracteres, controlo el evento.
                 e.Handled = true;
 
+            }
+        }
+
+        private void cbxMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void frmAgregarArticulo_Load(object sender, EventArgs e)
+        {
+            MarcaNegocio marcasNegocio = new MarcaNegocio();
+            //CategoriaNegocio categoriasNegocio = new CategoriaNegocio();
+            try
+            {
+
+                cbxMarca.DataSource = marcasNegocio.listar();
+                //cbxCategoria.DataSource = categoriasNegocio.listar();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

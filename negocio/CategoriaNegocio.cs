@@ -7,7 +7,7 @@ using dominio;
 
 namespace negocio
 {
-    class CategoriaNegocio
+    public class CategoriaNegocio
     {
         public List<Categoria> listar() 
         {
@@ -15,7 +15,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select Descripcion AS Categoria FROM CATEGORIAS");
+                datos.setearConsulta("select  Descripcion AS Categoria FROM CATEGORIAS");
                 datos.ejecutarAccion();
                 while (datos.Lector.Read())
                 {
