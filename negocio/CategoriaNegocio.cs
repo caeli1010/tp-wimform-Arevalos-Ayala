@@ -15,8 +15,8 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select  Descripcion AS Categoria FROM CATEGORIAS");
-                datos.ejecutarAccion();
+                datos.setearConsulta("select Descripcion AS Categoria FROM CATEGORIAS");
+                datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
                     Categoria aux = new Categoria((string)datos.Lector["Categoria"]);

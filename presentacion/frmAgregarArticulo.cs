@@ -35,7 +35,7 @@ namespace presentacion
                 nuevo.Nombre = txtNombre.Text;
                 nuevo.Descripcion = txtDescripcion.Text;
                 nuevo.Marca = (string)cbxMarca.SelectedItem;
-                //nuevo.Categoria = (string)cbxCategoria.SelectedItem;
+                nuevo.Categoria = (string)cbxCategoria.SelectedItem;
                 nuevo.UrlImagen = txtImagen.Text;
                //nuevo.Precio = (decimal)txtPrecio.Text;
 
@@ -65,20 +65,15 @@ namespace presentacion
             }
         }
 
-        private void cbxMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void frmAgregarArticulo_Load(object sender, EventArgs e)
         {
             MarcaNegocio marcasNegocio = new MarcaNegocio();
-            //CategoriaNegocio categoriasNegocio = new CategoriaNegocio();
+            CategoriaNegocio categoriasNegocio = new CategoriaNegocio();
             try
             {
 
                 cbxMarca.DataSource = marcasNegocio.listar();
-                //cbxCategoria.DataSource = categoriasNegocio.listar();
+                cbxCategoria.DataSource = categoriasNegocio.listar();
 
             }
             catch (Exception)
