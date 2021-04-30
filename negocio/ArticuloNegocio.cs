@@ -99,6 +99,8 @@ namespace negocio
                 string set = @"Codigo ='" + modificar.Codigo + "'," +
                          " Nombre = '" + modificar.Nombre + "', " +
                            "Descripcion = '" + modificar.Descripcion + "', " +
+                           "IdMarca = "+modificar.marca.Id+", " +
+                           "IdCategoria = "+modificar.categoria.Id+", " +
                         "ImagenUrl = '" + modificar.UrlImagen + "'," +
                          " Precio = " + modificar.Precio + "";
                 datos.setearConsulta(@"UPDATE ARTICULOS SET  "+set+" WHERE Codigo ='" + modificar.Codigo+ "'");
