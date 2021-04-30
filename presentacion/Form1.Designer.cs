@@ -335,7 +335,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.txtFiltro);
             this.panel3.Controls.Add(this.iconButton1);
