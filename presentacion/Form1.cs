@@ -92,8 +92,20 @@ namespace presentacion
         private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Articulo modificado = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
-            frmAgregarArticulo modificar = new frmAgregarArticulo(modificado);
-            modificar.ShowDialog();
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)dgvDetalle.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            if (cell.Value.ToString()== "Modificar")
+            {
+                frmAgregarArticulo modificar = new frmAgregarArticulo(modificado);
+                modificar.ShowDialog();
+            }
+            else
+            {
+                ArticuloNegocio elimina = new ArticuloNegocio();
+                elimina.eliminar(modificado.Codigo);
+                cargarGrilla();
+                this.btnSearch.Text = "Listar";
+            }
+
         }
     }
 }

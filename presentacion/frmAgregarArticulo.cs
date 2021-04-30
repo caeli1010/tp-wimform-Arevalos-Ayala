@@ -45,8 +45,8 @@ namespace presentacion
                 nuevo.categoria = (Categoria)cbxCategoria.SelectedItem;
                 nuevo.UrlImagen = txtImagen.Text;
                 nuevo.Precio = decimal.Parse(txtPrecio.Text);
-
-                ArticuloNegocio.agregar(nuevo);
+                //nuevo.Id = nu
+                ArticuloNegocio.guardarArticulo(nuevo);
                 MessageBox.Show("agregado sin problema");
                 Close();
             }

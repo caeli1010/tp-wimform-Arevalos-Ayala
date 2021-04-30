@@ -151,5 +151,17 @@ namespace negocio
             }
 
         }
+        public void guardarArticulo(Articulo articulo)
+        {
+            if (articulo.Codigo==null) 
+            {
+                this.agregar(articulo);
+            }
+            else
+            {
+                this.modificar(articulo);
+            }
+           
+        }
     }
 }
