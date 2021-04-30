@@ -17,31 +17,39 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select A.Codigo, A.Nombre, A.Descripcion, " +
-                    "M.Descripcion AS Marca, C.Descripcion AS Categoria, A.ImagenUrl as Imagen, A.Precio " +
-                    "FROM ARTICULOS AS A " +
-                    "JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria " +
-                    "JOIN MARCAS AS M ON M.Id = A.IdMarca");
+                datos.setearConsulta(@"SELECT
+                                        A.Codigo,
+                                        A.Nombre,
+                                        A.Descripcion,
+                                        M.Descripcion AS Marca,
+                                        C.Descripcion AS Categoria,
+                                        A.ImagenUrl AS Imagen,
+                                        A.Precio,
+                                        M.Id Mid,
+                                        C.Id as Cid
+                                        FROM
+                                        ARTICULOS AS A
+                                        JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria
+                                        JOIN MARCAS AS M ON M.Id = A.IdMarca");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Codigo = (string)datos.Lector.GetString(0);
-                    aux.Nombre = (string)datos.Lector.GetString(1);
-                    aux.Descripcion = (string)datos.Lector.GetString(2);
-                    aux.Marca = (string)datos.Lector.GetString(3);
-                    aux.Categoria = (string)datos.Lector.GetString(4);
-                    aux.UrlImagen = (string)datos.Lector.GetString(5);
-                    //aux.Precio = (decimal)datos.Lector.GetDecimal(6);
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.marca = new Marca((string)datos.Lector["Marca"]);
+                    aux.categoria = new Categoria((string)datos.Lector["Categoria"]);
+                    aux.UrlImagen = (string)datos.Lector["Imagen"];
                     aux.Precio = decimal.Round(datos.Lector.GetDecimal(6), 2, MidpointRounding.AwayFromZero);
                     lista.Add(aux);
 
                 }
                 return lista;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                throw e;
             }
             finally
             {
@@ -53,8 +61,8 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string valores = "values('"+nuevo.Codigo+"', '" +nuevo.Nombre+"', '"+ nuevo.Descripcion+"', '"+nuevo.UrlImagen+"', "+nuevo.Precio+")";
-                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, ImagenUrl, Precio) " + valores);
+                string valores = "values('"+nuevo.Codigo+"', '" +nuevo.Nombre+"', '"+ nuevo.Descripcion+ "', " + nuevo.marca.Id + ", " + nuevo.categoria.Id + ", '" + nuevo.UrlImagen+"', "+nuevo.Precio+ ")";
+                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) " + valores);
                 datos.ejecutarAccion();
 
             }

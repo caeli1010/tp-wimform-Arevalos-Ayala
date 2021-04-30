@@ -34,10 +34,10 @@ namespace presentacion
                 nuevo.Codigo = txtCodigo.Text;
                 nuevo.Nombre = txtNombre.Text;
                 nuevo.Descripcion = txtDescripcion.Text;
-                nuevo.Marca = (string)cbxMarca.SelectedItem;
-                nuevo.Categoria = (string)cbxCategoria.SelectedItem;
+                nuevo.marca = (Marca)cbxMarca.SelectedItem;
+                nuevo.categoria = (Categoria)cbxCategoria.SelectedItem;
                 nuevo.UrlImagen = txtImagen.Text;
-               //nuevo.Precio = (decimal)txtPrecio.Text;
+                nuevo.Precio = decimal.Parse(txtPrecio.Text);
 
                 ArticuloNegocio.agregar(nuevo);
                 MessageBox.Show("agregado sin problema");

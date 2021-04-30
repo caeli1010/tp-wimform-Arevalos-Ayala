@@ -75,6 +75,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\frmAgregarArticulo.datasource" />
+    <None Include="Properties\DataSources\frmCatalogo.datasource" />
+    <None Include="Properties\DataSources\presentacion.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\presentacion.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
