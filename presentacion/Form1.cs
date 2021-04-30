@@ -88,5 +88,12 @@ namespace presentacion
             agregar.ShowDialog();
             //cargarGrilla();
         }
+
+        private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Articulo modificado = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
+            frmAgregarArticulo modificar = new frmAgregarArticulo(modificado);
+            modificar.ShowDialog();
+        }
     }
 }
