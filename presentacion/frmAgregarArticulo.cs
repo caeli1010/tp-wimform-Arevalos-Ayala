@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Runtime;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,16 @@ namespace presentacion
 {
     public partial class frmAgregarArticulo : Form
     {
-       
+        private Articulo modificado = null;
         public frmAgregarArticulo()
         {
             InitializeComponent();
+        }
+        public frmAgregarArticulo(Articulo modificado)
+        {
+            InitializeComponent();
+            this.modificado = modificado;
+            Text = "Modificar Articulo";
         }
 
         private void lblCancelar_Click(object sender, EventArgs e)
@@ -74,7 +81,18 @@ namespace presentacion
 
                 cbxMarca.DataSource = marcasNegocio.listar();
                 cbxCategoria.DataSource = categoriasNegocio.listar();
+                if(modificado != null)
+                {
+                    txtCodigo.Text = modificado.Codigo;
+                    txtNombre.Text = modificado.Nombre;
+                    txtDescripcion.Text = modificado.Descripcion;
+                    cbxMarca.SelectedItem = modificado.marca;
+                    cbxCategoria.SelectedItem = modificado.categoria;
+                    txtImagen.Text = modificado.UrlImagen;
+                    txtPrecio.Text = "3456";
 
+
+                }
             }
             catch (Exception)
             {

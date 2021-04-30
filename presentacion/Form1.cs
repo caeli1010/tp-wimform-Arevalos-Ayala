@@ -14,12 +14,14 @@ namespace presentacion
 {
     public partial class frmCatalogo : Form
     {
+       
         private List<Articulo> listaArticulo;
        
         public frmCatalogo()
         {
             InitializeComponent();
         }
+      
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -67,6 +69,13 @@ namespace presentacion
         private void btnListar_Click(object sender, EventArgs e)
         {
             cargarGrilla();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo modificado = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
+            frmAgregarArticulo modificar = new frmAgregarArticulo(modificado);
+            modificar.ShowDialog();
         }
     }
 }
