@@ -61,8 +61,23 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string valores = "values('"+nuevo.Codigo+"', '" +nuevo.Nombre+"', '"+ nuevo.Descripcion+ "', " + nuevo.marca.Id + ", " + nuevo.categoria.Id + ", '" + nuevo.UrlImagen+"', "+nuevo.Precio+ ")";
-                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) " + valores);
+                string valores = @"values('"+
+                                    nuevo.Codigo+"', '"+ 
+                                    nuevo.Nombre+"', '"+
+                                    nuevo.Descripcion+ "', " +
+                                    nuevo.marca.Id + ", " +
+                                    nuevo.categoria.Id + ", '" +
+                                    nuevo.UrlImagen+"', "+
+                                    nuevo.Precio+ ")";
+                datos.setearConsulta(@"insert into ARTICULOS (
+                                        Codigo, 
+                                        Nombre,
+                                        Descripcion, 
+                                        IdMarca, 
+                                        IdCategoria, 
+                                        ImagenUrl, 
+                                        Precio
+                                        ) " + valores);
                 datos.ejecutarAccion();
 
             }
