@@ -80,14 +80,18 @@ namespace presentacion
             {
 
                 cbxMarca.DataSource = marcasNegocio.listar();
+                cbxMarca.ValueMember = "Id";
+                cbxMarca.DisplayMember = "Nombre";
                 cbxCategoria.DataSource = categoriasNegocio.listar();
-                if(modificado != null)
+                cbxCategoria.ValueMember = "Id";
+                cbxCategoria.DisplayMember = "Descripcion";
+                if (modificado != null)
                 {
                     txtCodigo.Text = modificado.Codigo;
                     txtNombre.Text = modificado.Nombre;
                     txtDescripcion.Text = modificado.Descripcion;
-                    cbxMarca.SelectedItem = modificado.marca;
-                    cbxCategoria.SelectedItem = modificado.categoria;
+                    cbxMarca.SelectedValue = modificado.marca.Id;
+                    cbxCategoria.SelectedValue = modificado.categoria.Id;
                     txtImagen.Text = modificado.UrlImagen;
                     txtPrecio.Text = "33456";
 
