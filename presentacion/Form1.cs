@@ -91,21 +91,24 @@ namespace presentacion
 
         private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Articulo modificado = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
             DataGridViewLinkCell cell = (DataGridViewLinkCell)dgvDetalle.Rows[e.RowIndex].Cells[e.ColumnIndex];
-            if (cell.Value.ToString()== "Modificar")
+            if (cell.Value.ToString() == "Modificar")
             {
+                Articulo modificado = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
                 frmAgregarArticulo modificar = new frmAgregarArticulo(modificado);
                 modificar.ShowDialog();
             }
-            else
+            else if (cell.Value.ToString() == "Eliminar")
             {
+                Articulo articulo = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
+                MessageBox.Show(" Estás seguro que lo vas a eliminar.? ");
                 ArticuloNegocio elimina = new ArticuloNegocio();
-                elimina.eliminar(modificado.Codigo);
+                elimina.eliminar(articulo.Codigo);
+                MessageBox.Show(" lo Lamento ya la caste!!!! ");
                 cargarGrilla();
                 this.btnSearch.Text = "Listar";
             }
-
+            
         }
     }
 }
