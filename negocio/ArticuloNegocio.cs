@@ -157,7 +157,7 @@ namespace negocio
         }
         public void guardarArticulo(Articulo articulo)
         {
-            if (articulo.Codigo==null) 
+            if (articulo.Id==0) 
             {
                 this.agregar(articulo);
             }

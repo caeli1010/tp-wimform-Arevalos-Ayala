@@ -93,7 +93,7 @@ namespace presentacion
                     cbxMarca.SelectedValue = modificado.marca.Id;
                     cbxCategoria.SelectedValue = modificado.categoria.Id;
                     txtImagen.Text = modificado.UrlImagen;
-                    txtPrecio.Text = "33456";
+                    txtPrecio.Text = modificado.Precio.ToString();
 
 
                 }
