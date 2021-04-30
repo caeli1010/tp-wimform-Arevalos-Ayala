@@ -210,6 +210,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAgregarArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Articulo";
             this.Load += new System.EventHandler(this.frmAgregarArticulo_Load);
             this.ResumeLayout(false);

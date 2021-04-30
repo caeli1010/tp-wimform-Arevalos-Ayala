@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 454);
+            this.ClientSize = new System.Drawing.Size(944, 681);
             this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.dgvDetalle);
             this.Controls.Add(this.btnAgregar);
@@ -147,6 +147,7 @@
             this.Controls.Add(this.lblFiltro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCatalogo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Catalogo";
             this.Load += new System.EventHandler(this.frmCatalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();

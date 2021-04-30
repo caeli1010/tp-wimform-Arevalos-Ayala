@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
-
+using FontAwesome.Sharp;
 namespace presentacion
 {
     public partial class frmCatalogo : Form
