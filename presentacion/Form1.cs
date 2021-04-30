@@ -97,6 +97,8 @@ namespace presentacion
                 Articulo modificado = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
                 frmAgregarArticulo modificar = new frmAgregarArticulo(modificado);
                 modificar.ShowDialog();
+                cargarGrilla();
+                this.btnSearch.Text = "Listar";
             }
             else if (cell.Value.ToString() == "Eliminar")
             {
@@ -107,6 +109,10 @@ namespace presentacion
                 MessageBox.Show(" lo Lamento ya la caste!!!! ");
                 cargarGrilla();
                 this.btnSearch.Text = "Listar";
+            }
+            else
+            {
+                cargarGrilla();
             }
             
         }

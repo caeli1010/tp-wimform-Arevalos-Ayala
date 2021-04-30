@@ -96,8 +96,12 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string set = "Codigo ='" + modificar.Codigo + "', Nombre = '" + modificar.Nombre + "', Descripcion = '" + modificar.Descripcion + "', ImagenUrl = '" + modificar.UrlImagen + "', Precio = " + modificar.Precio + "";
-                datos.setearConsulta("UPDATE ARTICULOS SET Descripcion = '" + modificar.Nombre + "' WHERE Codigo =" + modificar.Codigo + "");
+                string set = @"Codigo ='" + modificar.Codigo + "'," +
+                         " Nombre = '" + modificar.Nombre + "', " +
+                           "Descripcion = '" + modificar.Descripcion + "', " +
+                        "ImagenUrl = '" + modificar.UrlImagen + "'," +
+                         " Precio = " + modificar.Precio + "";
+                datos.setearConsulta(@"UPDATE ARTICULOS SET  "+set+" WHERE Codigo ='" + modificar.Codigo+ "'");
                 datos.ejecutarAccion();
 
             }
