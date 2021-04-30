@@ -25,14 +25,12 @@ namespace presentacion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmAgregarArticulo agregar = new frmAgregarArticulo();
-            agregar.ShowDialog();
-            //cargarGrilla();
+           
         }
 
         private void frmCatalogo_Load(object sender, EventArgs e)
         {
-            
+            this.btnSearch.Text = "Listar";
         }
 
         private void cargarGrilla()
@@ -43,7 +41,7 @@ namespace presentacion
                 listaArticulo = ArticuloNegocio.listar();
                 dgvDetalle.DataSource = listaArticulo;
 
-                dgvDetalle.Columns["UrlImagen"].Visible = false;//ocultamos la columna
+                //dgvDetalle.Columns["UrlImagen"].Visible = false;//ocultamos la columna
                 //dgvDetalle.Columns["Precio"].Visible = true;
                 //dgvDetalle.Columns["Precio"]. = dgvDetalle.MiddleRight;
                 
@@ -68,7 +66,7 @@ namespace presentacion
      
         private void btnListar_Click(object sender, EventArgs e)
         {
-            cargarGrilla();
+          
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -76,6 +74,19 @@ namespace presentacion
             Articulo modificado = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
             frmAgregarArticulo modificar = new frmAgregarArticulo(modificado);
             modificar.ShowDialog();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            cargarGrilla();
+            this.btnSearch.Text = "Buscar";
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            frmAgregarArticulo agregar = new frmAgregarArticulo();
+            agregar.ShowDialog();
+            //cargarGrilla();
         }
     }
 }
