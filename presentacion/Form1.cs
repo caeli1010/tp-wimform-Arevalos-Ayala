@@ -131,14 +131,5 @@ namespace presentacion
             cargarGrilla();
         }
 
-        private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void pbxImagen_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

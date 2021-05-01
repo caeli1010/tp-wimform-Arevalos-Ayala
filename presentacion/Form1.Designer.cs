@@ -112,10 +112,10 @@
             this.dgvDetalle.MinimumSize = new System.Drawing.Size(300, 400);
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Turquoise;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -125,7 +125,7 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Turquoise;
             dataGridViewCellStyle5.Format = "N2";
             dataGridViewCellStyle5.NullValue = null;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SlateGray;
@@ -141,7 +141,6 @@
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalle.Size = new System.Drawing.Size(400, 445);
             this.dgvDetalle.TabIndex = 7;
-            this.dgvDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalle_CellContentClick);
             this.dgvDetalle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvDetalle_MouseClick);
             // 
             // Descripcion
@@ -189,7 +188,6 @@
             this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagen.TabIndex = 8;
             this.pbxImagen.TabStop = false;
-            this.pbxImagen.Click += new System.EventHandler(this.pbxImagen_Click);
             // 
             // panel1
             // 
