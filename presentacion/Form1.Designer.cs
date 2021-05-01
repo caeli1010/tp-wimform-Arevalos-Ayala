@@ -48,6 +48,7 @@
             this.iconBtnEliminar = new FontAwesome.Sharp.IconButton();
             this.iconBtnModificar = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.frmAgregarArticuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
@@ -59,16 +60,16 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.BackColor = System.Drawing.Color.White;
-            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltro.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Italic);
-            this.txtFiltro.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtFiltro.Location = new System.Drawing.Point(25, 170);
+            this.txtFiltro.BackColor = System.Drawing.Color.DimGray;
+            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.ForeColor = System.Drawing.Color.Violet;
+            this.txtFiltro.Location = new System.Drawing.Point(24, 187);
             this.txtFiltro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(172, 28);
+            this.txtFiltro.Size = new System.Drawing.Size(172, 19);
             this.txtFiltro.TabIndex = 1;
-            this.txtFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             this.txtFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltro_KeyUp);
@@ -114,7 +115,7 @@
             this.dgvDetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Turquoise;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -235,6 +236,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.iconBtnEliminar);
             this.panel3.Controls.Add(this.iconBtnModificar);
             this.panel3.Controls.Add(this.pictureBox1);
@@ -304,6 +306,16 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 19);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Buscar Articulo";
+            // 
             // frmAgregarArticuloBindingSource
             // 
             this.frmAgregarArticuloBindingSource.DataSource = typeof(presentacion.frmAgregarArticulo);
@@ -357,6 +369,7 @@
         private FontAwesome.Sharp.IconButton iconBtnEliminar;
         private FontAwesome.Sharp.IconButton iconBtnModificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.Label label1;
     }
 }
 
