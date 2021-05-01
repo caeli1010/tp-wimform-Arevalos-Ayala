@@ -125,5 +125,13 @@ namespace presentacion
             busqueda();
         }
 
+        private void ibtnDetalle_Click(object sender, EventArgs e)
+        {
+            articulo = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
+            frmDetalle detalle = new frmDetalle(articulo);
+            detalle.ShowDialog();
+            cargarGrilla();
+        }
+
     }
 }

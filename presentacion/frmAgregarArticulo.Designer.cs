@@ -47,6 +47,8 @@
             this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.ibtnMarca = new FontAwesome.Sharp.IconButton();
             this.ibtnCategoria = new FontAwesome.Sharp.IconButton();
+            this.pImgFrm = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pImgFrm)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -226,7 +228,7 @@
             this.ibtnMarca.IconColor = System.Drawing.Color.Turquoise;
             this.ibtnMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnMarca.IconSize = 25;
-            this.ibtnMarca.Location = new System.Drawing.Point(379, 147);
+            this.ibtnMarca.Location = new System.Drawing.Point(390, 147);
             this.ibtnMarca.Name = "ibtnMarca";
             this.ibtnMarca.Size = new System.Drawing.Size(30, 30);
             this.ibtnMarca.TabIndex = 18;
@@ -248,7 +250,7 @@
             this.ibtnCategoria.IconColor = System.Drawing.Color.Turquoise;
             this.ibtnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnCategoria.IconSize = 25;
-            this.ibtnCategoria.Location = new System.Drawing.Point(379, 190);
+            this.ibtnCategoria.Location = new System.Drawing.Point(390, 190);
             this.ibtnCategoria.Name = "ibtnCategoria";
             this.ibtnCategoria.Size = new System.Drawing.Size(30, 30);
             this.ibtnCategoria.TabIndex = 19;
@@ -256,12 +258,22 @@
             this.ibtnCategoria.UseVisualStyleBackColor = false;
             this.ibtnCategoria.Click += new System.EventHandler(this.ibtnCategoria_Click);
             // 
+            // pImgFrm
+            // 
+            this.pImgFrm.Location = new System.Drawing.Point(452, 32);
+            this.pImgFrm.Name = "pImgFrm";
+            this.pImgFrm.Size = new System.Drawing.Size(273, 302);
+            this.pImgFrm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pImgFrm.TabIndex = 20;
+            this.pImgFrm.TabStop = false;
+            // 
             // frmAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(440, 372);
+            this.ClientSize = new System.Drawing.Size(789, 372);
+            this.Controls.Add(this.pImgFrm);
             this.Controls.Add(this.ibtnCategoria);
             this.Controls.Add(this.ibtnMarca);
             this.Controls.Add(this.cbxCategoria);
@@ -282,14 +294,17 @@
             this.Controls.Add(this.lblCodigo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAgregarArticulo";
-            this.Opacity = 0.87D;
+            this.Opacity = 0.95D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Articulo";
             this.Load += new System.EventHandler(this.frmAgregarArticulo_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmAgregarArticulo_KeyPress);
+            ((System.ComponentModel.ISupportInitialize)(this.pImgFrm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,5 +330,6 @@
         private System.Windows.Forms.ComboBox cbxCategoria;
         private FontAwesome.Sharp.IconButton ibtnMarca;
         private FontAwesome.Sharp.IconButton ibtnCategoria;
+        private System.Windows.Forms.PictureBox pImgFrm;
     }
 }

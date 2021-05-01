@@ -32,22 +32,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCatalogo));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCatalogo));
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.articuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.ibtnDetalle = new FontAwesome.Sharp.IconButton();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,12 +50,18 @@
             this.iconBtnEliminar = new FontAwesome.Sharp.IconButton();
             this.iconBtnModificar = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.articuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.frmAgregarArticuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmAgregarArticuloBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,22 +138,9 @@
             this.dgvDetalle.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.dgvDetalle.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.DarkTurquoise;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalle.Size = new System.Drawing.Size(858, 453);
+            this.dgvDetalle.Size = new System.Drawing.Size(718, 453);
             this.dgvDetalle.TabIndex = 7;
             this.dgvDetalle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvDetalle_MouseClick);
-            // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Turquoise;
-            this.codigoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
             // 
             // Descripcion
             // 
@@ -161,90 +148,33 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             // 
-            // nombreDataGridViewTextBoxColumn
+            // ibtnDetalle
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkTurquoise;
-            this.nombreDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "marca";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DarkTurquoise;
-            this.marcaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            // 
-            // categoriaDataGridViewTextBoxColumn
-            // 
-            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "categoria";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DarkTurquoise;
-            this.categoriaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.25F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = "0";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.DarkTurquoise;
-            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.MaxInputLength = 10;
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            // 
-            // articuloBindingSource
-            // 
-            this.articuloBindingSource.DataSource = typeof(dominio.Articulo);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkTurquoise;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSearch.IconColor = System.Drawing.Color.White;
-            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnSearch.IconSize = 32;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.Location = new System.Drawing.Point(22, 198);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(151, 37);
-            this.btnSearch.TabIndex = 9;
-            this.btnSearch.Text = "Listar";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSearch.UseVisualStyleBackColor = false;
+            this.ibtnDetalle.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.ibtnDetalle.FlatAppearance.BorderColor = System.Drawing.Color.DarkTurquoise;
+            this.ibtnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnDetalle.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.ibtnDetalle.ForeColor = System.Drawing.Color.White;
+            this.ibtnDetalle.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.ibtnDetalle.IconColor = System.Drawing.Color.White;
+            this.ibtnDetalle.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.ibtnDetalle.IconSize = 32;
+            this.ibtnDetalle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnDetalle.Location = new System.Drawing.Point(21, 415);
+            this.ibtnDetalle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ibtnDetalle.Name = "ibtnDetalle";
+            this.ibtnDetalle.Size = new System.Drawing.Size(151, 37);
+            this.ibtnDetalle.TabIndex = 9;
+            this.ibtnDetalle.Text = "Detalle";
+            this.ibtnDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnDetalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnDetalle.UseVisualStyleBackColor = false;
+            this.ibtnDetalle.Click += new System.EventHandler(this.ibtnDetalle_Click);
             // 
             // pbxImagen
             // 
-            this.pbxImagen.Location = new System.Drawing.Point(1126, 62);
+            this.pbxImagen.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxImagen.ErrorImage")));
+            this.pbxImagen.Location = new System.Drawing.Point(961, 62);
             this.pbxImagen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbxImagen.Name = "pbxImagen";
             this.pbxImagen.Size = new System.Drawing.Size(393, 453);
@@ -303,7 +233,7 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.txtFiltro);
             this.panel3.Controls.Add(this.ibtnAgregar);
-            this.panel3.Controls.Add(this.btnSearch);
+            this.panel3.Controls.Add(this.ibtnDetalle);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 30);
             this.panel3.Name = "panel3";
@@ -367,6 +297,78 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Turquoise;
+            this.codigoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkTurquoise;
+            this.nombreDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "marca";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DarkTurquoise;
+            this.marcaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            // 
+            // categoriaDataGridViewTextBoxColumn
+            // 
+            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "categoria";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DarkTurquoise;
+            this.categoriaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = "0";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.DarkTurquoise;
+            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.MaxInputLength = 10;
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            // 
+            // articuloBindingSource
+            // 
+            this.articuloBindingSource.DataSource = typeof(dominio.Articulo);
+            // 
             // frmAgregarArticuloBindingSource
             // 
             this.frmAgregarArticuloBindingSource.DataSource = typeof(presentacion.frmAgregarArticulo);
@@ -392,11 +394,11 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmCatalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmAgregarArticuloBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -407,7 +409,7 @@
         private System.Windows.Forms.DataGridView dgvDetalle;
         private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.BindingSource frmAgregarArticuloBindingSource;
-		private FontAwesome.Sharp.IconButton btnSearch;
+		private FontAwesome.Sharp.IconButton ibtnDetalle;
         private System.Windows.Forms.BindingSource articuloBindingSource;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

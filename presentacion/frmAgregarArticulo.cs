@@ -109,6 +109,7 @@ namespace presentacion
                     cbxCategoria.SelectedValue = articulo.categoria.Id;
                     txtImagen.Text = articulo.UrlImagen;
                     txtPrecio.Text = (string)articulo.Precio.ToString();
+                    pImgFrm.Load(articulo.UrlImagen);
                 }
             }
             catch (Exception)
@@ -137,6 +138,15 @@ namespace presentacion
             cbxCategoria.DataSource = categoriaNegocio.listar();
             cbxCategoria.ValueMember = "Id";
             cbxCategoria.DisplayMember = "Descripcion";
+        }
+
+        private void frmAgregarArticulo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 27)
+            {
+                if (MessageBox.Show("Amig@!!!. Vas a salir del Formulario!! .", "Estás segur@? ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    Close();
+            }
         }
     }
 }
