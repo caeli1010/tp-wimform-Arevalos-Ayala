@@ -89,14 +89,12 @@ namespace presentacion
         
         private void ocultarColumnas()
         {
-            
             //Oculto Columnas de la grilla.
             //Puedo poner el indice de la columna o el nombre de la propiedad.
             dgvDetalle.Columns["Id"].Visible = false;
             dgvDetalle.Columns["Codigo"].Visible = false;
             dgvDetalle.Columns["Descripcion"].Visible = false;
             dgvDetalle.Columns["UrlImagen"].Visible = false;
-            //dgvDetalle.Columns["Precio"].Visible = false;
         }
         private void txtFiltro_Click(object sender, EventArgs e)
         {
@@ -133,5 +131,14 @@ namespace presentacion
             cargarGrilla();
         }
 
+        private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pbxImagen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
