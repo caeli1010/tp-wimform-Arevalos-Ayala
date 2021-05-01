@@ -28,6 +28,11 @@ Desde la Solucion .sln
 
 ![Versiones Beta](https://github.com/caeli1010/tp-wimform-Arevalos-Ayala/blob/main/img/eliminar.JPG)
 
+
+## Video
+[![Watch the video](https://github.com/caeli1010/tp-wimform-Arevalos-Ayala/blob/main/img/inicio.JPG)](https://www.youtube.com/watch?v=syXpcyyGp_0)
+
+
 ## Contribuciones
 Se utilizaron Fontawesom inc del repo : [git](https://github.com/awesome-inc/FontAwesome.Sharp#windows-forms).
 
