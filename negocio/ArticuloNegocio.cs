@@ -18,15 +18,16 @@ namespace negocio
             try
             {
                 datos.setearConsulta(@"SELECT
+                                        A.Id,
                                         A.Codigo,
                                         A.Nombre,
                                         A.Descripcion,
                                         M.Descripcion AS Marca,
                                         C.Descripcion AS Categoria,
                                         A.ImagenUrl AS Imagen,
-                                        A.Precio,
-                                        M.Id Mid,
-                                        C.Id as Cid
+                                        A.Precio Precio,
+                                        M.Id IdMarca,
+                                        C.Id as IdCategoria
                                         FROM
                                         ARTICULOS AS A
                                         JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria
@@ -35,21 +36,22 @@ namespace negocio
                 while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
+                    aux.Id = (int)datos.Lector["Id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.marca = new Marca((string)datos.Lector["Marca"]);
                     aux.categoria = new Categoria((string)datos.Lector["Categoria"]);
                     aux.UrlImagen = (string)datos.Lector["Imagen"];
-                    aux.Precio = decimal.Round(datos.Lector.GetDecimal(6), 2, MidpointRounding.AwayFromZero);
+                    aux.Precio = (decimal)datos.Lector["Precio"];
                     lista.Add(aux);
 
                 }
                 return lista;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
             finally
             {
@@ -103,7 +105,7 @@ namespace negocio
                            "IdCategoria = "+modificar.categoria.Id+", " +
                         "ImagenUrl = '" + modificar.UrlImagen + "'," +
                          " Precio = " + modificar.Precio + "";
-                datos.setearConsulta(@"UPDATE ARTICULOS SET  "+set+" WHERE Codigo ='" + modificar.Codigo+ "'");
+                datos.setearConsulta(@"UPDATE ARTICULOS SET  "+set+" WHERE Id ='" + modificar.Id+ "'");
                 datos.ejecutarAccion();
 
             }
@@ -117,12 +119,12 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-        public void eliminar(string codigo)
+        public void eliminar(int Id)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("delete from ARTICULOS where Codigo = '" + codigo + "'");
+                datos.setearConsulta("delete from ARTICULOS where Codigo = '" + Id + "'");
                 datos.ejecutarAccion();
 
             }
@@ -159,6 +161,7 @@ namespace negocio
         }
         public void guardarArticulo(Articulo articulo)
         {
+
             if (articulo.Id==0) 
             {
                 this.agregar(articulo);

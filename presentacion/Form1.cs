@@ -71,15 +71,15 @@ namespace presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Articulo modificado = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
-            frmAgregarArticulo modificar = new frmAgregarArticulo(modificado);
-            modificar.ShowDialog();
+           
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             cargarGrilla();
-            this.btnSearch.Text = "Buscar";
+            this.btnSearch.Text = "Listar";
+            this.iconBtnModificar.Enabled = true;
+            this.iconBtnEliminar.Enabled = true;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -91,30 +91,51 @@ namespace presentacion
 
         private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewLinkCell cell = (DataGridViewLinkCell)dgvDetalle.Rows[e.RowIndex].Cells[e.ColumnIndex];
-            if (cell.Value.ToString() == "Modificar")
-            {
-                Articulo modificado = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
-                frmAgregarArticulo modificar = new frmAgregarArticulo(modificado);
-                modificar.ShowDialog();
-                cargarGrilla();
-                this.btnSearch.Text = "Listar";
-            }
-            else if (cell.Value.ToString() == "Eliminar")
-            {
-                Articulo articulo = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
-                MessageBox.Show(" Estás seguro que lo vas a eliminar.? ");
-                ArticuloNegocio elimina = new ArticuloNegocio();
-                elimina.eliminar(articulo.Codigo);
-                MessageBox.Show(" lo Lamento ya la caste!!!! ");
-                cargarGrilla();
-                this.btnSearch.Text = "Listar";
-            }
-            else
-            {
-                cargarGrilla();
-            }
+            //DataGridViewLinkCell cell = (DataGridViewLinkCell)dgvDetalle.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            //if (cell.Value.ToString() == "Modificar")
+            //{
+            //    Articulo art_mod = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
+            //    frmAgregarArticulo modificar = new frmAgregarArticulo(art_mod);
+            //    modificar.ShowDialog();
+            //    cargarGrilla();
+            //    //this.btnSearch.Text = "Listar";
+            //}
+            //else if (cell.Value.ToString() == "Eliminar")
+            //{
+            //    Articulo articulo = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
+            //        ArticuloNegocio elimina = new ArticuloNegocio();
+            //   if(MessageBox.Show(" Estás seguro que lo vas a eliminar.? ", "Eliminandoo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes);
+            //    elimina.eliminar(articulo.Id);
+            //    cargarGrilla();
+            //    this.btnSearch.Text = "Listar";
+            //}
+            //else
+            //{
+            //    cargarGrilla();
+            //}
             
+        }
+
+        private void txtFiltro_KeyUp(object sender, KeyEventArgs e)
+        {
+            this.btnSearch.Text = "Listar";
+        }
+
+        private void iconBtnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo art_mod = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
+            frmAgregarArticulo modificar = new frmAgregarArticulo(art_mod);
+            modificar.ShowDialog();
+        }
+
+        private void iconBtnEliminar_Click(object sender, EventArgs e)
+        {
+            Articulo articulo = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
+            ArticuloNegocio elimina = new ArticuloNegocio();
+            if (MessageBox.Show(" Estás seguro que lo vas a eliminar.? ", "Eliminandoo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) ;
+            elimina.eliminar(articulo.Id);
+            cargarGrilla();
+            this.btnSearch.Text = "Listar";
         }
     }
 }

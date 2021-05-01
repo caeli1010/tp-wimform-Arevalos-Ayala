@@ -45,6 +45,7 @@
             this.lblCancelar = new System.Windows.Forms.Button();
             this.cbxMarca = new System.Windows.Forms.ComboBox();
             this.cbxCategoria = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -126,6 +127,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.Color.Silver;
             this.txtNombre.Location = new System.Drawing.Point(119, 73);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
@@ -134,6 +136,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.BackColor = System.Drawing.Color.Silver;
             this.txtCodigo.Location = new System.Drawing.Point(119, 34);
             this.txtCodigo.MaxLength = 10;
             this.txtCodigo.Name = "txtCodigo";
@@ -142,6 +145,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.Silver;
             this.txtDescripcion.Location = new System.Drawing.Point(119, 111);
             this.txtDescripcion.MaxLength = 255;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -150,6 +154,7 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.BackColor = System.Drawing.Color.Silver;
             this.txtPrecio.Location = new System.Drawing.Point(119, 261);
             this.txtPrecio.MaxLength = 9;
             this.txtPrecio.Name = "txtPrecio";
@@ -159,6 +164,7 @@
             // 
             // txtImagen
             // 
+            this.txtImagen.BackColor = System.Drawing.Color.Silver;
             this.txtImagen.Location = new System.Drawing.Point(119, 226);
             this.txtImagen.MaxLength = 500;
             this.txtImagen.Name = "txtImagen";
@@ -187,6 +193,8 @@
             // 
             // cbxMarca
             // 
+            this.cbxMarca.BackColor = System.Drawing.Color.Silver;
+            this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarca.FormattingEnabled = true;
             this.cbxMarca.Location = new System.Drawing.Point(119, 150);
             this.cbxMarca.Name = "cbxMarca";
@@ -195,11 +203,22 @@
             // 
             // cbxCategoria
             // 
+            this.cbxCategoria.BackColor = System.Drawing.Color.Silver;
+            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoria.FormattingEnabled = true;
             this.cbxCategoria.Location = new System.Drawing.Point(119, 191);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(254, 21);
             this.cbxCategoria.TabIndex = 17;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox1.Location = new System.Drawing.Point(52, 340);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(122, 20);
+            this.textBox1.TabIndex = 18;
             // 
             // frmAgregarArticulo
             // 
@@ -207,6 +226,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(440, 372);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cbxCategoria);
             this.Controls.Add(this.cbxMarca);
             this.Controls.Add(this.lblCancelar);
@@ -256,5 +276,6 @@
         private System.Windows.Forms.Button lblCancelar;
         private System.Windows.Forms.ComboBox cbxMarca;
         private System.Windows.Forms.ComboBox cbxCategoria;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

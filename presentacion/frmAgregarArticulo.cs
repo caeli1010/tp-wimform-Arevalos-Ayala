@@ -14,15 +14,15 @@ namespace presentacion
 {
     public partial class frmAgregarArticulo : Form
     {
-        private Articulo modificado = null;
+        private Articulo _articulo = null;
         public frmAgregarArticulo()
         {
             InitializeComponent();
         }
-        public frmAgregarArticulo(Articulo modificado)
+        public frmAgregarArticulo(Articulo _articulo)
         {
             InitializeComponent();
-            this.modificado = modificado;
+            this._articulo = _articulo;
             Text = "Modificar Articulo";
         }
 
@@ -34,20 +34,21 @@ namespace presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo nuevo = new Articulo();
+            //Articulo nuevo = new Articulo();
             ArticuloNegocio ArticuloNegocio = new ArticuloNegocio();
             try
             {
-                nuevo.Codigo = txtCodigo.Text;
-                nuevo.Nombre = txtNombre.Text;
-                nuevo.Descripcion = txtDescripcion.Text;
-                nuevo.marca = (Marca)cbxMarca.SelectedItem;
-                nuevo.categoria = (Categoria)cbxCategoria.SelectedItem;
-                nuevo.UrlImagen = txtImagen.Text;
-                nuevo.Precio = decimal.Parse(txtPrecio.Text);
-                //nuevo.Id = nu
-                ArticuloNegocio.guardarArticulo(nuevo);
-                MessageBox.Show("agregado sin problema");
+                _articulo.Codigo = txtCodigo.Text;
+                _articulo.Nombre = txtNombre.Text;
+                _articulo.Descripcion = txtDescripcion.Text;
+                _articulo.marca = (Marca)cbxMarca.SelectedItem;
+                _articulo.categoria = (Categoria)cbxCategoria.SelectedItem;
+                _articulo.UrlImagen = txtImagen.Text;
+                _articulo.Precio = decimal.Parse(txtPrecio.Text);
+
+                //_articulo.Id = (_articulo.Id!=0) ? _articulo.Id : 0;
+                ArticuloNegocio.guardarArticulo(_articulo);
+                MessageBox.Show("correcto!!");
                 Close();
             }
             catch (Exception ex)
@@ -85,15 +86,15 @@ namespace presentacion
                 cbxCategoria.DataSource = categoriasNegocio.listar();
                 cbxCategoria.ValueMember = "Id";
                 cbxCategoria.DisplayMember = "Descripcion";
-                if (modificado != null)
+                if (_articulo != null)
                 {
-                    txtCodigo.Text = modificado.Codigo;
-                    txtNombre.Text = modificado.Nombre;
-                    txtDescripcion.Text = modificado.Descripcion;
-                    cbxMarca.SelectedValue = modificado.marca.Id;
-                    cbxCategoria.SelectedValue = modificado.categoria.Id;
-                    txtImagen.Text = modificado.UrlImagen;
-                    txtPrecio.Text = modificado.Precio.ToString();
+                    txtCodigo.Text = _articulo.Codigo;
+                    txtNombre.Text = _articulo.Nombre;
+                    txtDescripcion.Text = _articulo.Descripcion;
+                    cbxMarca.SelectedValue = _articulo.marca.Id;
+                    cbxCategoria.SelectedValue = _articulo.categoria.Id;
+                    txtImagen.Text = _articulo.UrlImagen;
+                    txtPrecio.Text = _articulo.Precio.ToString();
 
 
                 }
