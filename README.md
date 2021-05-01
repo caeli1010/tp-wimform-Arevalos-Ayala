@@ -34,7 +34,7 @@ Desde la Solucion .sln
 
 
 ## Contribuciones
-Se utilizaron Fontawesom inc del repo : [git](https://github.com/awesome-inc/FontAwesome.Sharp#windows-forms).
+Se utilizaron Fontawesome.sharp inc del repo : [git](https://github.com/awesome-inc/FontAwesome.Sharp#windows-forms).
 
 
 
