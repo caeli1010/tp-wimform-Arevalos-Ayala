@@ -40,7 +40,7 @@ namespace presentacion
             {
                 if (articulo == null)
                     articulo = new Articulo();
-
+                
                     articulo.Codigo = txtCodigo.Text;
                     articulo.Nombre = txtNombre.Text;
                     articulo.Descripcion = txtDescripcion.Text;
@@ -54,11 +54,13 @@ namespace presentacion
                 {
                     ArticuloNegocio.agregar(articulo);
                     MessageBox.Show("Agregado correctamente!!");
+                    
                 }
                 else
                 {
                     ArticuloNegocio.modificar(articulo);
                     MessageBox.Show(" Modificado correctamente!!");
+                    
                 }
                
                     Close();
@@ -106,9 +108,7 @@ namespace presentacion
                     cbxMarca.SelectedValue = articulo.marca.Id;
                     cbxCategoria.SelectedValue = articulo.categoria.Id;
                     txtImagen.Text = articulo.UrlImagen;
-                    txtPrecio.Text = articulo.Precio.ToString();
-
-
+                    txtPrecio.Text = (string)articulo.Precio.ToString();
                 }
             }
             catch (Exception)

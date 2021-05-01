@@ -98,7 +98,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                 datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, ImagenUrl = @imagenUrl, IdMarca = @marca, IdCategoria = @categoria Where Id = @id");
+                datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, ImagenUrl = @imagenUrl, IdMarca = @marca, IdCategoria = @categoria Where Id = @id");
                 datos.setearParametro("@codigo", modificar.Codigo);
                 datos.setearParametro("@nombre", modificar.Nombre);
                 datos.setearParametro("@descripcion", modificar.Descripcion);
@@ -118,6 +118,7 @@ namespace negocio
             finally
             {
                 datos.cerrarConexion();
+                datos = null;
             }
         }
         public void eliminar(int Id)
@@ -125,7 +126,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("delete from ARTICULOS where Codigo = '" + Id + "'");
+                datos.setearConsulta("delete from ARTICULOS where Id = '" + Id + "'");
                 datos.ejecutarAccion();
 
             }
@@ -137,6 +138,7 @@ namespace negocio
             finally
             {
                 datos.cerrarConexion();
+                datos = null;
             }
 
         }
