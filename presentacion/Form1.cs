@@ -123,9 +123,10 @@ namespace presentacion
 
         private void iconBtnModificar_Click(object sender, EventArgs e)
         {
-            Articulo art_mod = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
-            frmAgregarArticulo modificar = new frmAgregarArticulo(art_mod);
+            Articulo articulo = (Articulo)dgvDetalle.CurrentRow.DataBoundItem;
+            frmAgregarArticulo modificar = new frmAgregarArticulo(articulo);
             modificar.ShowDialog();
+            cargarGrilla();
         }
 
         private void iconBtnEliminar_Click(object sender, EventArgs e)

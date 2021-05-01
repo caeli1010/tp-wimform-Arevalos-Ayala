@@ -30,8 +30,8 @@ namespace negocio
                                         C.Id as IdCategoria
                                         FROM
                                         ARTICULOS AS A
-                                        JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria
-                                        JOIN MARCAS AS M ON M.Id = A.IdMarca");
+                                        INNER JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria
+                                        INNER JOIN MARCAS AS M ON M.Id = A.IdMarca");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -40,8 +40,8 @@ namespace negocio
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    aux.marca = new Marca((string)datos.Lector["Marca"]);
-                    aux.categoria = new Categoria((string)datos.Lector["Categoria"]);
+                    aux.marca = new Marca((int)datos.Lector["IdMarca"],(string)datos.Lector["Marca"]);
+                    aux.categoria = new Categoria((int)datos.Lector["IdCategoria"],(string)datos.Lector["Categoria"]);
                     aux.UrlImagen = (string)datos.Lector["Imagen"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
                     lista.Add(aux);
@@ -98,14 +98,15 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string set = @"Codigo ='" + modificar.Codigo + "'," +
-                         " Nombre = '" + modificar.Nombre + "', " +
-                           "Descripcion = '" + modificar.Descripcion + "', " +
-                           "IdMarca = "+modificar.marca.Id+", " +
-                           "IdCategoria = "+modificar.categoria.Id+", " +
-                        "ImagenUrl = '" + modificar.UrlImagen + "'," +
-                         " Precio = " + modificar.Precio + "";
-                datos.setearConsulta(@"UPDATE ARTICULOS SET  "+set+" WHERE Id ='" + modificar.Id+ "'");
+                 datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, ImagenUrl = @imagenUrl, IdMarca = @marca, IdCategoria = @categoria Where Id = @id");
+                datos.setearParametro("@codigo", modificar.Codigo);
+                datos.setearParametro("@nombre", modificar.Nombre);
+                datos.setearParametro("@descripcion", modificar.Descripcion);
+                datos.setearParametro("@imagenUrl", modificar.UrlImagen);
+                datos.setearParametro("@marca", modificar.marca.Id);
+                datos.setearParametro("@categoria", modificar.categoria.Id);
+                datos.setearParametro("@id", modificar.Id);
+
                 datos.ejecutarAccion();
 
             }

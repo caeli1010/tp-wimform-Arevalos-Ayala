@@ -73,7 +73,6 @@
             // 
             this.txtFiltro.BackColor = System.Drawing.Color.White;
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltro.Enabled = false;
             this.txtFiltro.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Italic);
             this.txtFiltro.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtFiltro.Location = new System.Drawing.Point(22, 170);
@@ -282,7 +281,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(151, 37);
             this.btnSearch.TabIndex = 9;
-            this.btnSearch.Text = "Buscar";
+            this.btnSearch.Text = "Listar";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -305,7 +304,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1561, 30);
+            this.panel1.Size = new System.Drawing.Size(1366, 30);
             this.panel1.TabIndex = 9;
             // 
             // panel2
@@ -315,7 +314,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 515);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1561, 60);
+            this.panel2.Size = new System.Drawing.Size(1366, 60);
             this.panel2.TabIndex = 10;
             // 
             // iconButton1
@@ -424,7 +423,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1561, 575);
+            this.ClientSize = new System.Drawing.Size(1366, 575);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

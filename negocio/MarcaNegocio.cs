@@ -19,8 +19,8 @@ namespace negocio
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
-                    Marca aux = new Marca((string)datos.Lector["Marca"]);
-                    lista.Add(aux);
+                    //Marca aux = new Marca((string)datos.Lector["Marca"]);
+                    lista.Add(new Marca((int)datos.Lector["id"],(string)datos.Lector["Marca"]));
                 }
                 return lista;
 	        }
