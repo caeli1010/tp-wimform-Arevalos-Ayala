@@ -1,4 +1,4 @@
-# Catalogo de Tecnologías Informáticas  By(Arevalo-Ayala)
+# Catálogo de Tecnologías Informáticas  By(Arevalo-Ayala)
 
 Es un trabajo práctico  para la materia de  Programación 3 de la carrera TUP de UNT FRGP
 realizado por Arevalo R. Eugenio y Ayala Elizabeth Carolina.
