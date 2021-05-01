@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevo));
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblNuevo = new System.Windows.Forms.Label();
+            this.txtNuevo = new System.Windows.Forms.TextBox();
             this.iBtnAceptar = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.ibtnCerrar = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
-            // label1
+            // lblNuevo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Turquoise;
-            this.label1.Location = new System.Drawing.Point(66, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "AGREGAR CATEGORIA";
+            this.lblNuevo.AutoSize = true;
+            this.lblNuevo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevo.ForeColor = System.Drawing.Color.Turquoise;
+            this.lblNuevo.Location = new System.Drawing.Point(66, 27);
+            this.lblNuevo.Name = "lblNuevo";
+            this.lblNuevo.Size = new System.Drawing.Size(173, 18);
+            this.lblNuevo.TabIndex = 0;
+            this.lblNuevo.Text = "AGREGAR CATEGORIA";
             // 
-            // textBox1
+            // txtNuevo
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(69, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNuevo.BackColor = System.Drawing.Color.Silver;
+            this.txtNuevo.Location = new System.Drawing.Point(69, 61);
+            this.txtNuevo.Name = "txtNuevo";
+            this.txtNuevo.Size = new System.Drawing.Size(164, 20);
+            this.txtNuevo.TabIndex = 1;
             // 
             // iBtnAceptar
             // 
@@ -69,22 +69,24 @@
             this.iBtnAceptar.Size = new System.Drawing.Size(50, 50);
             this.iBtnAceptar.TabIndex = 2;
             this.iBtnAceptar.UseVisualStyleBackColor = true;
+            this.iBtnAceptar.Click += new System.EventHandler(this.iBtnAceptar_Click);
             // 
-            // iconButton1
+            // ibtnCerrar
             // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.iconButton1.IconColor = System.Drawing.Color.Turquoise;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 50;
-            this.iconButton1.Location = new System.Drawing.Point(183, 103);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(50, 50);
-            this.iconButton1.TabIndex = 3;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.ibtnCerrar.FlatAppearance.BorderSize = 0;
+            this.ibtnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.ibtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.ibtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnCerrar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.ibtnCerrar.IconColor = System.Drawing.Color.Turquoise;
+            this.ibtnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnCerrar.IconSize = 50;
+            this.ibtnCerrar.Location = new System.Drawing.Point(183, 103);
+            this.ibtnCerrar.Name = "ibtnCerrar";
+            this.ibtnCerrar.Size = new System.Drawing.Size(50, 50);
+            this.ibtnCerrar.TabIndex = 3;
+            this.ibtnCerrar.UseVisualStyleBackColor = true;
+            this.ibtnCerrar.Click += new System.EventHandler(this.ibtnCerrar_Click);
             // 
             // frmNuevo
             // 
@@ -92,10 +94,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(45)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(303, 196);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.ibtnCerrar);
             this.Controls.Add(this.iBtnAceptar);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtNuevo);
+            this.Controls.Add(this.lblNuevo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNuevo";
             this.Opacity = 0.9D;
@@ -109,9 +111,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblNuevo;
+        private System.Windows.Forms.TextBox txtNuevo;
         private FontAwesome.Sharp.IconButton iBtnAceptar;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton ibtnCerrar;
     }
 }

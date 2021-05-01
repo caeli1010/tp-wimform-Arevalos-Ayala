@@ -38,8 +38,8 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string valores = "values(" + nuevo.Descripcion + ")";
-                datos.setearConsulta("insert into CATEGORIA ( Nombre) " + valores);
+                string valores = "values('"+nuevo.Descripcion+"')";
+                datos.setearConsulta("insert into CATEGORIAS (Descripcion) " + valores);
                 datos.ejecutarAccion();
 
             }

@@ -118,18 +118,25 @@ namespace presentacion
             }
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void ibtnMarca_Click(object sender, EventArgs e)
         {
-            frmNuevo agregar = new frmNuevo();
+            MarcaNegocio marcasNegocio = new MarcaNegocio();
+            frmNuevo agregar = new frmNuevo(false);
             agregar.ShowDialog();
-            
+            cbxMarca.DataSource = marcasNegocio.listar();
+            cbxMarca.ValueMember = "Id";
+            cbxMarca.DisplayMember = "Nombre";
+
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void ibtnCategoria_Click(object sender, EventArgs e)
         {
-
-            frmNuevo agregar = new frmNuevo();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            frmNuevo agregar = new frmNuevo(true);
             agregar.ShowDialog();
+            cbxCategoria.DataSource = categoriaNegocio.listar();
+            cbxCategoria.ValueMember = "Id";
+            cbxCategoria.DisplayMember = "Descripcion";
         }
     }
 }

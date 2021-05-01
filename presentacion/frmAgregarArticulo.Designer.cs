@@ -45,8 +45,8 @@
             this.lblCancelar = new System.Windows.Forms.Button();
             this.cbxMarca = new System.Windows.Forms.ComboBox();
             this.cbxCategoria = new System.Windows.Forms.ComboBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.ibtnMarca = new FontAwesome.Sharp.IconButton();
+            this.ibtnCategoria = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -212,49 +212,49 @@
             this.cbxCategoria.Size = new System.Drawing.Size(254, 21);
             this.cbxCategoria.TabIndex = 17;
             // 
-            // iconButton1
+            // ibtnMarca
             // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.iconButton1.IconColor = System.Drawing.Color.Turquoise;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(379, 147);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(30, 30);
-            this.iconButton1.TabIndex = 18;
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.ibtnMarca.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ibtnMarca.BackColor = System.Drawing.Color.Transparent;
+            this.ibtnMarca.FlatAppearance.BorderSize = 0;
+            this.ibtnMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
+            this.ibtnMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.ibtnMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnMarca.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnMarca.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ibtnMarca.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.ibtnMarca.IconColor = System.Drawing.Color.Turquoise;
+            this.ibtnMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnMarca.IconSize = 25;
+            this.ibtnMarca.Location = new System.Drawing.Point(379, 147);
+            this.ibtnMarca.Name = "ibtnMarca";
+            this.ibtnMarca.Size = new System.Drawing.Size(30, 30);
+            this.ibtnMarca.TabIndex = 18;
+            this.ibtnMarca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnMarca.UseVisualStyleBackColor = false;
+            this.ibtnMarca.Click += new System.EventHandler(this.ibtnMarca_Click);
             // 
-            // iconButton2
+            // ibtnCategoria
             // 
-            this.iconButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.iconButton2.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
-            this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.AliceBlue;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.iconButton2.IconColor = System.Drawing.Color.Turquoise;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 25;
-            this.iconButton2.Location = new System.Drawing.Point(379, 190);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(30, 30);
-            this.iconButton2.TabIndex = 19;
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.UseVisualStyleBackColor = false;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.ibtnCategoria.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ibtnCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.ibtnCategoria.FlatAppearance.BorderSize = 0;
+            this.ibtnCategoria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
+            this.ibtnCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.ibtnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnCategoria.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnCategoria.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ibtnCategoria.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.ibtnCategoria.IconColor = System.Drawing.Color.Turquoise;
+            this.ibtnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnCategoria.IconSize = 25;
+            this.ibtnCategoria.Location = new System.Drawing.Point(379, 190);
+            this.ibtnCategoria.Name = "ibtnCategoria";
+            this.ibtnCategoria.Size = new System.Drawing.Size(30, 30);
+            this.ibtnCategoria.TabIndex = 19;
+            this.ibtnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnCategoria.UseVisualStyleBackColor = false;
+            this.ibtnCategoria.Click += new System.EventHandler(this.ibtnCategoria_Click);
             // 
             // frmAgregarArticulo
             // 
@@ -262,8 +262,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(440, 372);
-            this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.ibtnCategoria);
+            this.Controls.Add(this.ibtnMarca);
             this.Controls.Add(this.cbxCategoria);
             this.Controls.Add(this.cbxMarca);
             this.Controls.Add(this.lblCancelar);
@@ -313,7 +313,7 @@
         private System.Windows.Forms.Button lblCancelar;
         private System.Windows.Forms.ComboBox cbxMarca;
         private System.Windows.Forms.ComboBox cbxCategoria;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton ibtnMarca;
+        private FontAwesome.Sharp.IconButton ibtnCategoria;
     }
 }
