@@ -10,6 +10,9 @@ Use la opción gh repo [git](clone caeli1010/tp-wimform-Arevalos-Ayala) para clo
 ```Ejectuar
 Desde la Solucion .sln
 ```
+## Video
+[![Watch the video](https://github.com/caeli1010/tp-wimform-Arevalos-Ayala/blob/main/img/video.JPG)](https://www.youtube.com/watch?v=syXpcyyGp_0)
+
 
 ## Capturas
 ### Anteriores:
@@ -28,9 +31,6 @@ Desde la Solucion .sln
 
 ![Versiones Beta](https://github.com/caeli1010/tp-wimform-Arevalos-Ayala/blob/main/img/eliminar.JPG)
 
-
-## Video
-[![Watch the video](VIDEO)](https://www.youtube.com/watch?v=syXpcyyGp_0)
 
 
 ## Contribuciones
