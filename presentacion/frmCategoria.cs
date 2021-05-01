@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace presentacion
 {
-    public partial class frmCategoria : Form
+    public partial class frmNuevo : Form
     {
-        public frmCategoria()
+        public frmNuevo()
         {
             InitializeComponent();
+        }
+
+        private void frmNuevo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

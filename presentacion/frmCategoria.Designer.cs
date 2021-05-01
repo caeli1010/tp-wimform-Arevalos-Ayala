@@ -1,6 +1,6 @@
 ﻿namespace presentacion
 {
-    partial class frmCategoria
+    partial class frmNuevo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoria));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevo));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.iBtnAceptar = new FontAwesome.Sharp.IconButton();
@@ -86,21 +86,22 @@
             this.iconButton1.TabIndex = 3;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // frmCategoria
+            // frmNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(45)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(303, 196);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iBtnAceptar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmCategoria";
+            this.Name = "frmNuevo";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Categoria";
+            this.Load += new System.EventHandler(this.frmNuevo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

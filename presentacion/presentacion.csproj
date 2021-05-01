@@ -67,12 +67,6 @@
     <Compile Include="frmCategoria.Designer.cs">
       <DependentUpon>frmCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMarca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMarca.Designer.cs">
-      <DependentUpon>frmMarca.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

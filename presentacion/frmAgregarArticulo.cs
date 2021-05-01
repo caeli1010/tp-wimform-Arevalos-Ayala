@@ -117,5 +117,19 @@ namespace presentacion
                 throw;
             }
         }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            frmNuevo agregar = new frmNuevo();
+            agregar.ShowDialog();
+            
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+            frmNuevo agregar = new frmNuevo();
+            agregar.ShowDialog();
+        }
     }
 }
