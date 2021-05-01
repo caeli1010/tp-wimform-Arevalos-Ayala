@@ -26,9 +26,9 @@ namespace presentacion
             //    txtDetalle.Text= " vino Vacio";
 
             txtDetalle.Text = "Nombre :" + articulo.Nombre +
-                "\r\n Descripción: " + articulo.Descripcion+
-                "\r\n Precio: " + articulo.Precio+
-                "\r\n Marca: " + articulo.marca.Nombre;
+                "\r\nDescripción: " + articulo.Descripcion+
+                "\r\nPrecio: " + articulo.Precio+
+                "\r\nMarca: " + articulo.marca.Nombre;
             imgDetalle.Load((string)articulo.UrlImagen);
 
         }

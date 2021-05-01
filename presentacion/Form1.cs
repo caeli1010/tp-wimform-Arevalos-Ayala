@@ -32,7 +32,7 @@ namespace presentacion
             {
                 listaArticulo = ArticuloNegocio.listar();
                 dgvDetalle.DataSource = listaArticulo;
-                //ocultarColumnas();
+                ocultarColumnas();
                 RecargarImg(listaArticulo[0].UrlImagen);
             }
             catch (Exception ex)
@@ -96,7 +96,7 @@ namespace presentacion
             dgvDetalle.Columns["Codigo"].Visible = false;
             dgvDetalle.Columns["Descripcion"].Visible = false;
             dgvDetalle.Columns["UrlImagen"].Visible = false;
-            dgvDetalle.Columns["Precio"].Visible = false;
+            //dgvDetalle.Columns["Precio"].Visible = false;
         }
         private void txtFiltro_Click(object sender, EventArgs e)
         {
