@@ -40,21 +40,21 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.articuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ibtnDetalle = new FontAwesome.Sharp.IconButton();
-            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ibtnAgregar = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.iconBtnEliminar = new FontAwesome.Sharp.IconButton();
             this.iconBtnModificar = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.frmAgregarArticuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmAgregarArticuloBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,7 +109,7 @@
             this.dgvDetalle.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvDetalle.Location = new System.Drawing.Point(250, 48);
             this.dgvDetalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvDetalle.MaximumSize = new System.Drawing.Size(400, 600);
+            this.dgvDetalle.MaximumSize = new System.Drawing.Size(500, 600);
             this.dgvDetalle.MinimumSize = new System.Drawing.Size(300, 400);
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -140,7 +140,7 @@
             this.dgvDetalle.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgvDetalle.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.DarkTurquoise;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalle.Size = new System.Drawing.Size(400, 445);
+            this.dgvDetalle.Size = new System.Drawing.Size(500, 445);
             this.dgvDetalle.TabIndex = 7;
             this.dgvDetalle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvDetalle_MouseClick);
             // 
@@ -177,18 +177,6 @@
             this.ibtnDetalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnDetalle.UseVisualStyleBackColor = false;
             this.ibtnDetalle.Click += new System.EventHandler(this.ibtnDetalle_Click);
-            // 
-            // pbxImagen
-            // 
-            this.pbxImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbxImagen.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxImagen.ErrorImage")));
-            this.pbxImagen.Location = new System.Drawing.Point(673, 48);
-            this.pbxImagen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(387, 445);
-            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxImagen.TabIndex = 8;
-            this.pbxImagen.TabStop = false;
             // 
             // panel1
             // 
@@ -249,6 +237,16 @@
             this.panel3.Size = new System.Drawing.Size(223, 467);
             this.panel3.TabIndex = 11;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 19);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Buscar Articulo";
+            // 
             // iconBtnEliminar
             // 
             this.iconBtnEliminar.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -306,15 +304,17 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // pbxImagen
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 164);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 19);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Buscar Articulo";
+            this.pbxImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbxImagen.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxImagen.ErrorImage")));
+            this.pbxImagen.Location = new System.Drawing.Point(790, 48);
+            this.pbxImagen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(203, 217);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImagen.TabIndex = 8;
+            this.pbxImagen.TabStop = false;
             // 
             // frmAgregarArticuloBindingSource
             // 
@@ -345,10 +345,10 @@
             this.Load += new System.EventHandler(this.frmCatalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmAgregarArticuloBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -357,7 +357,6 @@
         #endregion
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.DataGridView dgvDetalle;
-        private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.BindingSource frmAgregarArticuloBindingSource;
 		private FontAwesome.Sharp.IconButton ibtnDetalle;
         private System.Windows.Forms.BindingSource articuloBindingSource;
@@ -370,6 +369,7 @@
         private FontAwesome.Sharp.IconButton iconBtnModificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbxImagen;
     }
 }
 
