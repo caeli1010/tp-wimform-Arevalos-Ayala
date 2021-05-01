@@ -29,9 +29,9 @@ Desde la Solucion .sln
 ![Versiones Beta](https://github.com/caeli1010/tp-wimform-Arevalos-Ayala/blob/main/img/eliminar.JPG)
 
 ## Contribuciones
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Se utilizaron Fontawesom inc del repo : [git](https://github.com/awesome-inc/FontAwesome.Sharp#windows-forms).
 
-Please make sure to update tests as appropriate.
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
