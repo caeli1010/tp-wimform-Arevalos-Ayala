@@ -136,7 +136,6 @@ namespace presentacion
             if (MessageBox.Show(" Estás seguro que lo vas a eliminar.? ", "Eliminandoo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) ;
             elimina.eliminar(articulo.Id);
             cargarGrilla();
-            this.btnSearch.Text = "Listar";
         }
     }
 }
