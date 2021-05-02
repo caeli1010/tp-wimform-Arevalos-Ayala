@@ -12,7 +12,7 @@ y luego ejecute el archivo con el script de BBDD [![Watch the video][(CATALOGO_D
 Desde la Solucion .sln
 ```
 ## Video
-[![Watch the video][(https://github.com/caeli1010/tp-wimform-Arevalos-Ayala/blob/main/img/video.JP)](https://youtu.be/DcuRTjctd8k)
+[![Watch the video](https://github.com/caeli1010/tp-wimform-Arevalos-Ayala/blob/main/img/video.JPG)](https://youtu.be/DcuRTjctd8k)
 
 
 ## Capturas
