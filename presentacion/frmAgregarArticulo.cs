@@ -109,7 +109,15 @@ namespace presentacion
                     cbxCategoria.SelectedValue = articulo.categoria.Id;
                     txtImagen.Text = articulo.UrlImagen;
                     txtPrecio.Text = (string)articulo.Precio.ToString();
-                    pImgFrm.Load(articulo.UrlImagen);
+                    try
+                    {
+                        pImgFrm.Load((string)articulo.UrlImagen);
+                    }
+                    catch (Exception)
+                    {
+                        pImgFrm.Load("https://c.tenor.com/eDchk3srtycAAAAj/piffle-error.gif");
+                    }
+                    
                 }
             }
             catch (Exception)
