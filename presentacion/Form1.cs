@@ -127,8 +127,6 @@ namespace presentacion
                 ocultarColumnas();
                 
             }
-
-            //ocultarColumnas();
         }
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
