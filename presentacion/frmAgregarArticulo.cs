@@ -133,7 +133,8 @@ namespace presentacion
         private void ibtnCategoria_Click(object sender, EventArgs e)
         {
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-            frmNuevo agregar = new frmNuevo(true);
+            frmNuevo agregar = new 
+                frmNuevo(true);
             agregar.ShowDialog();
             cbxCategoria.DataSource = categoriaNegocio.listar();
             cbxCategoria.ValueMember = "Id";

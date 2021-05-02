@@ -44,18 +44,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ibtnAgregar = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.iconBtnEliminar = new FontAwesome.Sharp.IconButton();
             this.iconBtnModificar = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.frmAgregarArticuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmAgregarArticuloBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFiltro
@@ -224,7 +226,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.iconBtnEliminar);
             this.panel3.Controls.Add(this.iconBtnModificar);
@@ -236,6 +238,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(223, 467);
             this.panel3.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(898, 389);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(95, 93);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -293,17 +306,6 @@
             this.iconBtnModificar.UseVisualStyleBackColor = false;
             this.iconBtnModificar.Click += new System.EventHandler(this.iconBtnModificar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 185);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // pbxImagen
             // 
             this.pbxImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -320,6 +322,17 @@
             // 
             this.frmAgregarArticuloBindingSource.DataSource = typeof(presentacion.frmAgregarArticulo);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(220, 177);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -327,6 +340,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(1060, 557);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -350,6 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmAgregarArticuloBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,6 +385,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbxImagen;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
