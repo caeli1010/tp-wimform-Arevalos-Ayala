@@ -11,7 +11,7 @@ Use la opción gh repo [git](clone caeli1010/tp-wimform-Arevalos-Ayala) para clo
 Desde la Solucion .sln
 ```
 ## Video
-[![Watch the video](https://github.com/caeli1010/tp-wimform-Arevalos-Ayala/blob/main/img/video.JPG)](https://www.youtube.com/watch?v=syXpcyyGp_0)
+[![Watch the video](https://youtu.be/DcuRTjctd8k)](https://www.youtube.com/watch?v=syXpcyyGp_0)
 
 
 ## Capturas
