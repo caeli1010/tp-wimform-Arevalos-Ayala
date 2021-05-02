@@ -42,7 +42,15 @@ namespace presentacion
         }
         private void RecargarImg(string img)
         {
-            pbxImagen.Load(img);
+            try
+            {
+                pbxImagen.Load(img);
+            }
+            catch (Exception)
+            {
+                pbxImagen.Load("https://c.tenor.com/eDchk3srtycAAAAj/piffle-error.gif");
+            }
+            
         }
         private void dgvDetalle_MouseClick(object sender, MouseEventArgs e)
         {
@@ -109,11 +117,15 @@ namespace presentacion
                 listaFiltrada = listaArticulo.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.marca.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper())|| x.categoria.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
                 dgvDetalle.DataSource = null;
                 dgvDetalle.DataSource = listaFiltrada;
+                ocultarColumnas();
+               
             }
             else
             {
                 dgvDetalle.DataSource = null;
                 dgvDetalle.DataSource = listaArticulo;
+                ocultarColumnas();
+                
             }
 
             //ocultarColumnas();

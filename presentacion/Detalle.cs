@@ -22,17 +22,20 @@ namespace presentacion
 
         private void frmDetalle_Load(object sender, EventArgs e)
         {
-            //if (articulo == null)
-            //    txtDetalle.Text= " vino Vacio";
 
             txtDetalle.Text = "Nombre :" + articulo.Nombre +
                 "\r\nDescripción: " + articulo.Descripcion+
                 "\r\nPrecio: " + articulo.Precio+
                 "\r\nMarca: " + articulo.marca.Nombre;
-            imgDetalle.Load((string)articulo.UrlImagen);
-
+            try
+            {
+                imgDetalle.Load((string)articulo.UrlImagen);
+            }
+            catch (Exception)
+            {
+                imgDetalle.Load("https://c.tenor.com/eDchk3srtycAAAAj/piffle-error.gif");
+            }
         }
-
         private void frmDetalle_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 27)

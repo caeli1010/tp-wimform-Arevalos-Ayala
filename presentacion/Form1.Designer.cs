@@ -311,7 +311,7 @@
             this.pbxImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbxImagen.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbxImagen.ErrorImage")));
             this.pbxImagen.Image = ((System.Drawing.Image)(resources.GetObject("pbxImagen.Image")));
-            this.pbxImagen.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxImagen.InitialImage")));
+            this.pbxImagen.InitialImage = null;
             this.pbxImagen.Location = new System.Drawing.Point(790, 48);
             this.pbxImagen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbxImagen.Name = "pbxImagen";
@@ -386,8 +386,8 @@
         private FontAwesome.Sharp.IconButton iconBtnModificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbxImagen;
     }
 }
 
