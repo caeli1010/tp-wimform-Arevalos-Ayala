@@ -5,13 +5,14 @@ realizado por Arevalo R. Eugenio y Ayala Elizabeth Carolina.
 
 ## Instalacion
 
-Use la opción gh repo [git](clone caeli1010/tp-wimform-Arevalos-Ayala) para clonar el repositorio.
+Use la opción git repo [git](clone caeli1010/tp-wimform-Arevalos-Ayala) para clonar el repositorio.
+y luego ejecute el archivo con el script de BBDD [![Watch the video][(CATALOGO_DB_v2.sql)](https://github.com/caeli1010/tp-winform-Arevalo-Ayala/blob/main/CATALOGO_DB_v2.sql)
 
 ```Ejectuar
 Desde la Solucion .sln
 ```
 ## Video
-[![Watch the video](https://github.com/caeli1010/tp-wimform-Arevalos-Ayala/blob/main/img/video.JP)](https://youtu.be/DcuRTjctd8k)
+[![Watch the video][(https://github.com/caeli1010/tp-wimform-Arevalos-Ayala/blob/main/img/video.JP)](https://youtu.be/DcuRTjctd8k)
 
 
 ## Capturas
