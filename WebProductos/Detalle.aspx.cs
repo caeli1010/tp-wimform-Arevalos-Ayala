@@ -17,16 +17,19 @@ namespace WebProductos
             leer = new ArticuloNegocio();
 
             int id = int.Parse(Request.QueryString["id"]);
+            List<Articulo> listado = (List<Articulo>)Session["articulos"];
+            Articulo seleccionado = listado.Find(X => X.Id == id);
 
-            leer.leerArticulo(id);
 
-            mostrar();
+            lblDescripcion.Text = seleccionado.Descripcion;
+            lblNombre.Text = seleccionado.Nombre;
+            lblImagen.Text = seleccionado.UrlImagen;
+
+            //mostrar();
          }
-        public void mostrar() {
-            lblDescripcion.Text = "aca va la descripcion";
-            lblNombre.Text = "aca va la Nombre";
-            lblImagen.Text = "aca va la imagen";
-        }
+        //public void mostrar() {
+        //}
+   
 
     }
 }

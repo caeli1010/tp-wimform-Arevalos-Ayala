@@ -14,7 +14,9 @@
                 <div class="caption">
                     <h1><% = item.Nombre  %></h1>
 
-                    <p><% = item.Codigo %></p>
+                    <p><strong> Código :<% = item.Codigo %></strong></p>
+                    <p> Precio : $ <% = item.Precio%></p>
+                    <p> En 6 coutas : $ <% = item.Precio/6 %>.toFixer(2)</p>
                     <p>
                         <a target="_blank" href="Detalle.aspx?id=<% = item.Id %>" class="btn btn-primary" role="button">Ver Detalle</a>
                         <a href="#" class="btn btn-default" role="button">Agregar al Carrito</a>

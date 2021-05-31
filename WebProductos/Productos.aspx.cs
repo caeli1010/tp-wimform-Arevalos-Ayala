@@ -18,12 +18,12 @@ namespace WebProductos
             try
             {
             lista = negocio.listar();
-            Session.Add("articulos", "dasd");
-               
+            Session.Add("articulos", lista);
             }
             catch (Exception error)
             {
-                Response.Redirect("Error.aspx"+ error);               
+                Session.Add("Error", error.ToString());
+                Response.Redirect("Error.aspx");               
             }
 
         }
