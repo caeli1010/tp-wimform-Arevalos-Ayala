@@ -175,5 +175,27 @@ namespace negocio
             }
            
         }
+        //public Articulo detalleArticulo(int id)
+        //{
+        //    AccesoDatos datos = new AccesoDatos();
+        //    Articulo articulo = new Articulo();
+        //    try
+        //    {
+        //        datos.setearConsulta("select * from ARTICULOS where id = " + id + "");
+        //        datos.ejecutarLectura();
+
+        //        return articulo = datos;
+
+        //    }
+        //    catch (global::System.Exception)
+        //    {
+        //        throw;
+        //    }
+
+        //    finally
+        //    {
+        //        datos.cerrarConexion();
+        //    }
+        //}
     }
 }

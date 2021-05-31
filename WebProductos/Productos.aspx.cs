@@ -18,6 +18,8 @@ namespace WebProductos
             try
             {
             lista = negocio.listar();
+            Session.Add("articulos", "dasd");
+               
             }
             catch (Exception error)
             {
