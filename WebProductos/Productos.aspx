@@ -14,12 +14,21 @@
                 <div class="caption">
                     <h1><% = item.Nombre  %></h1>
 
-                    <p><strong> Código :<% = item.Codigo %></strong></p>
-                    <p> Precio : $ <% = item.Precio%></p>
-                    <p> En 6 coutas : $ <% = item.Precio/6 %></p>
+                    <p><strong> Código :<% = item.Codigo %></strong>
+                        <br />
+                        <del class="disabled"> Antes: $ <% = item.Precio.ToString("N") %></del>
+                        <br />
+                        <strong> Precio : $ <% = (item.Precio * 85/100).ToString("N") %></strong>
+
+                    </p>
+                    <p><span class="badge badge-danger ">En 6 coutas : $ <% = (item.Precio/6).ToString("N") %></span></p>
                     <p>
-                        <a target="_blank" href="Detalle.aspx?id=<% = item.Id %>" class="btn btn-primary" role="button">Ver Detalle</a>
-                        <a href="#" class="btn btn-default" role="button">Agregar al Carrito</a>
+                        <a  href="Detalle.aspx?id=<% = item.Id %>" class="btn btn-primary" role="button">Ver Detalle</a>
+                        <p>
+                        <asp:Label ID="lblCantidad" CssClass="bg-danger " runat="server" Text="Cantidad"></asp:Label>
+                        <asp:TextBox ID="txtCantidad"  runat="server" TextMode="Number" MaxLength="3" BorderStyle="Outset" CssClass="form-control bg-danger"></asp:TextBox>
+                        </p>
+                            <a href="#" class="btn btn-default" role="button">Agregar al Carrito</a>
                     </p>
                 </div>
             </div>
