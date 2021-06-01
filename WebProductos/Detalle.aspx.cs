@@ -19,16 +19,12 @@ namespace WebProductos
             int id = int.Parse(Request.QueryString["id"]);
             List<Articulo> listado = (List<Articulo>)Session["articulos"];
             Articulo seleccionado = listado.Find(X => X.Id == id);
+            Session["desc"]= seleccionado.Descripcion; 
+            Session["nom"]= seleccionado.Nombre;
+            Session["img"] = seleccionado.UrlImagen;
 
-
-            lblDescripcion.Text = seleccionado.Descripcion;
-            lblNombre.Text = seleccionado.Nombre;
-            lblImagen.Text = seleccionado.UrlImagen;
-
-            //mostrar();
          }
-        //public void mostrar() {
-        //}
+
    
 
     }
