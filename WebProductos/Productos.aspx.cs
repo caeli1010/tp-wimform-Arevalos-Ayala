@@ -19,6 +19,7 @@ namespace WebProductos
             {
             lista = negocio.listar();
             Session.Add("articulos", lista);
+             Session["cant"] = txtCantidad.Text;
             }
             catch (Exception error)
             {
