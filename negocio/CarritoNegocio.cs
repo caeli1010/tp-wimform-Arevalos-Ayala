@@ -7,32 +7,32 @@ using dominio;
 
 namespace negocio
 {
-    class CarritoNegocio
+    public class CarritoNegocio
     {
-        public List<Carrito> Listar()
-        {
-            List<Carrito> lista = new List<Carrito>();
-            AccesoDatos datos = new AccesoDatos();
-            try
-            {
-                datos.setearConsulta();
-                datos.ejecutarLectura();
-                while (datos.Lector.Read())
-                {
-                    lista.Add();
-                }
-                return lista;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
+        //public List<Carrito> Listar()
+        //{
+        //    List<Carrito> lista = new List<Carrito>();
+        //    AccesoDatos datos = new AccesoDatos();
+        //    try
+        //    {
+        //        //datos.setearConsulta();
+        //        //datos.ejecutarLectura();
+        //        //while (datos.Lector.Read())
+        //        //{
+        //        //    lista.Add();
+        //        //}
+        //        //return lista;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    finally
+        //    {
 
-            }
+        //    }
 
-        }
+        //}
 
     }
 }
