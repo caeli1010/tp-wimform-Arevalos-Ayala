@@ -11,27 +11,25 @@ namespace WebProductos
 {
     public partial class Carrito : System.Web.UI.Page
     {
+        public static Stack<Articulo>Pila;
         protected void Page_Load(object sender, EventArgs e)
         {
+        Pila = new Stack<Articulo>();
+
             int id = int.Parse(Request.QueryString["id"]);
             decimal precio = decimal.Parse(Request.QueryString["precio"]);
             List<Articulo> listado = (List<Articulo>)Session["articulos"];
             Articulo seleccionado = listado.Find(X => X.Id == id);
-            
 
+            Pila.Push(seleccionado);
 
-            for (int i = 1; i <= (int)Session["cantidad"]; i++ ) {
-
-                Session["desc"+(int)i] = seleccionado.Descripcion;
-                Session["nom"+(int)i] = seleccionado.Nombre;
-                Session["img"+(int)i] = seleccionado.UrlImagen;
-               
-                
-                Session["cantidad"]= (int)Session["cantidad"]+1;
-                
-            }
-           
-
+                for (int i = 0; i <= Pila.Count(); i++)
+                {
+                    Session["contador"] = Pila.Count();
+                    Session["desc" + (int)Session["contador"]] = (string)Pila.Peek().Descripcion;
+                    Session["nom" + (int)Session["contador"]] = (string)Pila.Peek().Nombre;
+                    Session["img" + (int)Session["contador"]] = (string)Pila.Peek().UrlImagen;
+                }
         }
     }
 }
