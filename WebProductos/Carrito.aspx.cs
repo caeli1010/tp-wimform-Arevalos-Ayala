@@ -17,26 +17,20 @@ namespace WebProductos
             decimal precio = decimal.Parse(Request.QueryString["precio"]);
             List<Articulo> listado = (List<Articulo>)Session["articulos"];
             Articulo seleccionado = listado.Find(X => X.Id == id);
-
             
-              
-            if ((int)Session["cantidad"]==0 ) {
 
-                Session["desc"+(int)Session["cantidad"]] = seleccionado.Descripcion;
-                Session["nom"+(int)Session["cantidad"]] = seleccionado.Nombre;
-                Session["img"+(int)Session["cantidad"]] = seleccionado.UrlImagen;
+
+            for (int i = 1; i <= (int)Session["cantidad"]; i++ ) {
+
+                Session["desc"+(int)i] = seleccionado.Descripcion;
+                Session["nom"+(int)i] = seleccionado.Nombre;
+                Session["img"+(int)i] = seleccionado.UrlImagen;
                
                 
-                Session["cantidad"]= 1;
+                Session["cantidad"]= (int)Session["cantidad"]+1;
+                
             }
-            else
-            {
-                Session["desc" + (int)Session["cantidad"]] = seleccionado.Descripcion;
-                Session["nom" + (int)Session["cantidad"]] = seleccionado.Nombre;
-                Session["img" + (int)Session["cantidad"]] = seleccionado.UrlImagen;
-               
-                Session["cantidad"] = (int)Session["cantidad"]+1;
-            }
+           
 
         }
     }
