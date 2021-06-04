@@ -14,11 +14,24 @@ namespace WebProductos
         protected void Page_Load(object sender, EventArgs e)
         {
             int id = int.Parse(Request.QueryString["id"]);
+            decimal precio = decimal.Parse(Request.QueryString["precio"]);
             List<Articulo> listado = (List<Articulo>)Session["articulos"];
             Articulo seleccionado = listado.Find(X => X.Id == id);
-            Session["desc"] = seleccionado.Descripcion;
-            Session["nom"] = seleccionado.Nombre;
-            Session["img"] = seleccionado.UrlImagen;
+            //Session["desc"] = seleccionado.Descripcion;
+            //Session["nom"] = seleccionado.Nombre;
+            //Session["img"] = seleccionado.UrlImagen;
+            int cont = 0;
+            if (cont == 0) {
+             (Articulo)Session["Articulo"+cont] = seleccionado;
+                cont++;
+             (int)Session["cantidad"] = cont;
+            }
+            else
+            {
+                Session["Articulo" + cont] = seleccionado;
+                cont++;
+                Session["cantidad"] = cont;
+            }
 
         }
     }

@@ -7,11 +7,11 @@ using dominio;
 
 namespace negocio
 {
-    class StockNegocio
+    class CarritoNegocio
     {
-        public List<Stock> Listar()
+        public List<Carrito> Listar()
         {
-            List<Stock> lista = new List<Stock>();
+            List<Carrito> lista = new List<Carrito>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
@@ -25,9 +25,14 @@ namespace negocio
             }
             catch (Exception)
             {
-
                 throw;
             }
+            finally
+            {
+
+            }
+
         }
+
     }
 }

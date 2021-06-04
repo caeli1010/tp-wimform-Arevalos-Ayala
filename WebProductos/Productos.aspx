@@ -33,7 +33,7 @@
                 <div class="col-md-4">
                     <asp:TextBox ID="txtCantidad" CssClass="form-control " runat="server" TextMode="Number" MaxLength="3" BorderStyle="Outset" Text="1"></asp:TextBox>
                 </div>
-                  <a href="#" class="btn btn-default" role="button">Agregar al Carrito</a>
+                  <a href="Carrito.aspx?id=<% = item.Id %>&precio=<%=item.Precio %>" class="btn btn-default" role="button">Agregar al Carrito</a>
             </div>
         </div>
         </div>
