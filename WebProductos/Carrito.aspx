@@ -10,16 +10,16 @@
         <tr>
             <td>Precio</td>
         </tr>
-    <% foreach (dominio.ItemCarrito item in Pila)
+    <% foreach (dominio.Articulo item in Pila)
         { %>
-        <tr>
-            <td> <% =item.producto.Nombre %></td>
+      <%--  <tr>
+            <td> <% = item.marca.Nombre %></td>
+        </tr>--%>
+         <tr>
+            <td> <% =Session["cant"] %></td>
         </tr>
          <tr>
-            <td> <% =item.cantidad %></td>
-        </tr>
-         <tr>
-            <td> <% =item.subTotal %></td>
+            <td> <% =item.Precio %></td>
         </tr>
      
     <% }%>
