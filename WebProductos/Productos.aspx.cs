@@ -12,6 +12,7 @@ namespace WebProductos
     public partial class Productos : System.Web.UI.Page
     {
         public List<Articulo> lista;
+        //public List<ItemCarrito> 
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();

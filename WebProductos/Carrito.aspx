@@ -1,7 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="WebProductos.Carrito" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <% for (int i = 0; i <= (int)Session["contador"]; i++)
+    <table>
+        <tr>
+            <td>producto</td>
+        </tr>
+        <tr>
+            <td>Cantidad</td>
+        </tr>
+        <tr>
+            <td>Precio</td>
+        </tr>
+    <% foreach (dominio.ItemCarrito item in Pila)
         { %>
-       esto vale: <%  = Session["nom" + (int)i]  %>
+        <tr>
+            <td> <% =item.producto.Nombre %></td>
+        </tr>
+         <tr>
+            <td> <% =item.cantidad %></td>
+        </tr>
+         <tr>
+            <td> <% =item.subTotal %></td>
+        </tr>
+     
     <% }%>
+          </table>
 </asp:Content>

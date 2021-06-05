@@ -11,25 +11,33 @@ namespace WebProductos
 {
     public partial class Carrito : System.Web.UI.Page
     {
-        public static Stack<Articulo>Pila;
+        public static List<Articulo>Pila;
+        //public List<ItemCarrito> elegido;
         protected void Page_Load(object sender, EventArgs e)
         {
-        Pila = new Stack<Articulo>();
+        Pila = (List<Articulo>)Session["articulos"];
 
-            int id = int.Parse(Request.QueryString["id"]);
-            decimal precio = decimal.Parse(Request.QueryString["precio"]);
-            List<Articulo> listado = (List<Articulo>)Session["articulos"];
-            Articulo seleccionado = listado.Find(X => X.Id == id);
+            if (Pila == null)
+                Pila = new List<Articulo>();
 
-            Pila.Push(seleccionado);
+            List<Articulo> seleccionado = (List<Articulo>)Session["articulos"];
+            Pila.Add(seleccionado.Find(X => X.Id.ToString() == Request.QueryString["id"]));
 
-                for (int i = 0; i <= Pila.Count(); i++)
-                {
-                    Session["contador"] = Pila.Count();
-                    Session["desc" + (int)Session["contador"]] = (string)Pila.Peek().Descripcion;
-                    Session["nom" + (int)Session["contador"]] = (string)Pila.Peek().Nombre;
-                    Session["img" + (int)Session["contador"]] = (string)Pila.Peek().UrlImagen;
-                }
+            Session.Add("articulos", Pila);
+
+            //int id = int.Parse(Request.QueryString["id"]);
+            //List<Articulo> listado = (List<Articulo>)Session["articulos"];
+            //Articulo seleccionado = listado.Find(X => X.Id == id);
+
+
+            //    for (int i = 0; i <= Pila.Count(); i++)
+            //    {
+            //        Pila.Push(seleccionado);
+            //        Session["contador"] = Pila.Count();
+                    //Session["desc" + (int)Session["contador"]] = (string)Pila.Peek().Descripcion;
+                    //Session["nom" + (int)Session["contador"]] = (string)Pila.Peek().Nombre;
+                    //Session["img" + (int)Session["contador"]] = (string)Pila.Peek().UrlImagen;
+           
         }
     }
 }
