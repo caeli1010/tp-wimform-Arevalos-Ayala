@@ -29,10 +29,10 @@
                 <a href="Detalle.aspx?id=<% = item.Id %>" class="btn btn-primary" role="button">Ver Detalle</a>
                 </p>
   
-                <asp:Label ID="lblCantidad" CssClass="text-secondary" runat="server" Text="Cantidad"></asp:Label>
+                <%--<asp:Label ID="lblCantidad" CssClass="text-secondary" runat="server" Text="Cantidad"></asp:Label>
                 <div class="col-md-4">
                     <asp:TextBox ID="txtCantidad" CssClass="form-control " runat="server" TextMode="Number" MaxLength="3" BorderStyle="Outset" Text="1" OnTextChanged="txtCantidad_TextChanged"></asp:TextBox>
-                </div>
+                </div>--%>
                   <a href="Carrito.aspx?id=<% = item.Id %>&precio=<%=item.Precio %>" class="btn btn-default" role="button">Agregar al Carrito</a>
             </div>
         </div>

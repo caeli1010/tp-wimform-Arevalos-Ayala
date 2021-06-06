@@ -3,24 +3,38 @@
     <table>
         <tr>
             <td>producto</td>
-       
-            <td>Cantidad</td>
-       
+            <td>Id Item</td>
             <td>Precio</td>
+            <td>Cantidad</td>
+            <td>Acción</td>
         </tr>
-    <% foreach (dominio.Articulo item in Pila)
-        { %>
+        <asp:Repeater runat="server" ID="repetidor">
+            <ItemTemplate>
         <tr>
-            <td><% = item.Nombre %></td>
+            <td><%#Eval("producto.Nombre")%></td>
       
-            <td> <% = Session["cant"] %></td>
+            <td> <%#Eval("producto.Id")%> </td>
       
-            <td> <% =item.Precio %></td>
-            <td>  <asp:TextBox ID="txtCantidad" runat="server" MaxLength="3" ></asp:TextBox> 
-                <%--<input type="number" value="<% = Session['cant'] %>" />--%>
-            </td>      
+            <td><%#Eval("producto.Precio")%></td>
+            <td>  
+                <asp:TextBox 
+                    ID='txtCantidad' 
+                    TextMode="Number" 
+                    MaxLength="3" 
+                    AutoPostBack="true"
+                    BorderStyle="Outset"
+                    OnTextChanged="txtCantidad_TextChanged"
+                    Text='<%#Eval("cantidad")%>'  
+                    
+                    runat="server">
+                </asp:TextBox> 
+            </td>   
+            <td>
+                <i class=" fa fa-trash "></i>
+                <asp:Button Text="Borrar" ID="btnEliminar" OnClick="btnEliminar_Click" CommandArgument='<%#Eval("producto.Id")%>'  runat="server" /> </td>
         </tr>
-     
-    <% }%>
+     </ItemTemplate>
+        </asp:Repeater>
           </table>
+<asp:Label Text='dasd' ID="lblPrecio" runat="server" />
 </asp:Content>

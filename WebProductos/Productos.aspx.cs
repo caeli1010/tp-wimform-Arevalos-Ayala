@@ -12,7 +12,7 @@ namespace WebProductos
     public partial class Productos : System.Web.UI.Page
     {
         public List<Articulo> lista;
-        //public List<ItemCarrito> 
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -20,7 +20,6 @@ namespace WebProductos
             {
             lista = negocio.listar();
             Session.Add("articulos", lista);
-             Session["cant"] = int.Parse(txtCantidad.Text);
             }
             catch (Exception error)
             {
@@ -30,9 +29,5 @@ namespace WebProductos
 
         }
 
-        protected void txtCantidad_TextChanged(object sender, EventArgs e)
-        {
-            Session["cant"] = int.Parse(((TextBox)sender).Text);
-        }
     }
 }

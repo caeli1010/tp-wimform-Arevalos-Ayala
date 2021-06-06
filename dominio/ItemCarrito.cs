@@ -11,5 +11,13 @@ namespace dominio
         public int cantidad { get; set; }
         public Articulo producto { get; set; }
         public decimal subTotal { get; set; }
+        public ItemCarrito() {
+            cantidad = 1;
+            
+        }
+        //public override Articulo GetArticulo()
+        //{
+        //    return producto;
+        //}
     }
 }
