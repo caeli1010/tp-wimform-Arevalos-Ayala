@@ -32,7 +32,7 @@ namespace WebProductos
                         Articulo artSel = (Articulo)seleccionado.Find(x => x.Id.ToString() == Request.QueryString["id"]);
                         ItemCarrito itemseleccionado   = new ItemCarrito();
                         itemseleccionado.producto = (Articulo)artSel;
-                        itemseleccionado.cantidad = 5;
+                        itemseleccionado.cantidad = 1;
                         Pila.Add(itemseleccionado);
                     }
                 }
@@ -63,21 +63,21 @@ namespace WebProductos
 
             //Session["precio"] = ((TextBox)sender).ID;
 
-            var argument = ((TextBox)sender).ID.ToString();
-            List<ItemCarrito> Pila = (List<ItemCarrito>)Session["listaArticulos"];
-            ItemCarrito seleccionado = Pila.Find(x => x.producto.Id.ToString() == argument);
-            Pila.Remove(seleccionado);
+            //var argument = ((TextBox)sender).ID.ToString();
+            //List<ItemCarrito> Pila = (List<ItemCarrito>)Session["listaArticulos"];
+            //ItemCarrito seleccionado = Pila.Find(x => x.producto.Id.ToString() == argument);
+            //Pila.Remove(seleccionado);
 
-            ItemCarrito subtotal = new ItemCarrito();
+            //ItemCarrito subtotal = new ItemCarrito();
 
             //Session["precio"] = (decimal)(seleccionado.producto.Precio * int.Parse(((TextBox)sender).Text));
-            Session["precio"] = (decimal)(seleccionado.producto.Precio * 10);
-            subtotal.producto.Precio = (decimal)Session["precio"];
-            Pila.Add(subtotal);
-            Session["listaArticulos"] = Pila;
-            repetidor.DataSource = null;
-            repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];
-            repetidor.DataBind();
+            //Session["precio"] = (decimal)(seleccionado.producto.Precio * 10);
+            //subtotal.producto.Precio = (decimal)Session["precio"];
+            //Pila.Add(subtotal);
+            //Session["listaArticulos"] = Pila;
+            //repetidor.DataSource = null;
+            //repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];
+            //repetidor.DataBind();
         }
     }
 }

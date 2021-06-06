@@ -1,13 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="WebProductos.Carrito" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <table>
+    <table class="table table-dark">
+         <thead>
         <tr>
-            <td>producto</td>
-            <td>Id Item</td>
-            <td>Precio</td>
-            <td>Cantidad</td>
-            <td>Acción</td>
+            <th scope="col">producto</th>
+            <th scope="col">Id Item</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Acción</th>
         </tr>
+  </thead>
+  <tbody>
         <asp:Repeater runat="server" ID="repetidor">
             <ItemTemplate>
         <tr>
@@ -35,6 +38,7 @@
         </tr>
      </ItemTemplate>
         </asp:Repeater>
-          </table>
+          </tbody>
+</table>
 <asp:Label Text='dasd' ID="lblPrecio" runat="server" />
 </asp:Content>
