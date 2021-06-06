@@ -62,7 +62,7 @@
         <a class="nav-link" runat="server" href="~/Productos">Productos</a>
       </li>
         <li class="nav-item">
-        <a class="nav-link" runat="server" href="~/verCarrito">Ver carrito</a>
+        <a class="nav-link" runat="server" href="~/Carrito">Ver carrito</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

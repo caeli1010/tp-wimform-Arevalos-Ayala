@@ -37,23 +37,8 @@ namespace WebProductos
 
             Session.Add("listaArticulos", Pila);
 
-
-
-
-
-            //int id = int.Parse(Request.QueryString["id"]);
-            //List<Articulo> listado = (List<Articulo>)Session["articulos"];
-            //Articulo seleccionado = listado.Find(X => X.Id == id);
-
-
-            //    for (int i = 0; i <= Pila.Count(); i++)
-            //    {
-            //        Pila.Push(seleccionado);
-            //        Session["contador"] = Pila.Count();
-                    //Session["desc" + (int)Session["contador"]] = (string)Pila.Peek().Descripcion;
-                    //Session["nom" + (int)Session["contador"]] = (string)Pila.Peek().Nombre;
-                    //Session["img" + (int)Session["contador"]] = (string)Pila.Peek().UrlImagen;
            
         }
+
     }
 }

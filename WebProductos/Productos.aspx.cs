@@ -20,7 +20,7 @@ namespace WebProductos
             {
             lista = negocio.listar();
             Session.Add("articulos", lista);
-             Session["cant"] = txtCantidad.Text;
+             Session["cant"] = int.Parse(txtCantidad.Text);
             }
             catch (Exception error)
             {
@@ -28,6 +28,11 @@ namespace WebProductos
                 Response.Redirect("Error.aspx");               
             }
 
+        }
+
+        protected void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            Session["cant"] = int.Parse(((TextBox)sender).Text);
         }
     }
 }

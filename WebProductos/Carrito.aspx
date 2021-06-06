@@ -3,23 +3,22 @@
     <table>
         <tr>
             <td>producto</td>
-        </tr>
-        <tr>
+       
             <td>Cantidad</td>
-        </tr>
-        <tr>
+       
             <td>Precio</td>
         </tr>
     <% foreach (dominio.Articulo item in Pila)
         { %>
-      <%--  <tr>
-            <td> <% = item.marca.Nombre %></td>
-        </tr>--%>
-         <tr>
-            <td> <% =Session["cant"] %></td>
-        </tr>
-         <tr>
+        <tr>
+            <td><% = item.Nombre %></td>
+      
+            <td> <% = Session["cant"] %></td>
+      
             <td> <% =item.Precio %></td>
+            <td>  <asp:TextBox ID="txtCantidad" runat="server" MaxLength="3" ></asp:TextBox> 
+                <%--<input type="number" value="<% = Session['cant'] %>" />--%>
+            </td>      
         </tr>
      
     <% }%>
