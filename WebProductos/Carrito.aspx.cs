@@ -25,7 +25,7 @@ namespace WebProductos
                 {
                     if (Pila.Find(x => x.Id.ToString() == Request.QueryString["id"]) == null)
                     {
-                        List<Articulo> seleccionado = (List<Articulo>)Session["listaArticulos"];
+                        List<Articulo> seleccionado = (List<Articulo>)Session["articulos"];
                         Pila.Add(seleccionado.Find(x => x.Id.ToString() == Request.QueryString["id"]));
                     }
                 }
