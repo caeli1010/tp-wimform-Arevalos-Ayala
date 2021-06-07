@@ -1,15 +1,46 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Detalle.aspx.cs" Inherits="WebProductos.Detalle" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="jumbotron">
 
-        <img src="<% = Session["img"] %>" class="img-responsive" alt="" />
-        <h1><% = Session["nom"] %></h1>
-  <%--<p><% =  Session["desc"] %></p>--%>
-    <p>
-        <label> Cantidad: </label> 
-        <input id="cantidad" type="number" name="cantidad" max="4"/>
-        <a  href="Productos" class="btn btn-primary" role="button">Volver</a>
-        <a href="#" class="btn btn-default" role="button">Agregar al Carrito</a>
-    </p>
-</div>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+   <h4 class="justify-content-center">Categorias </h4>
+  <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link btn btn-outline-success" href="#">Electrodomesticos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link btn btn-outline-success" href="#">Telefonos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link btn btn-outline-success" href="#">Impresoras</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link btn btn-outline-success" href="#" >Otros</a>
+  </li>
+</ul>
+        <hr class="py-4"/>
+    <div class=" row">
+        <img src="<% = Session["imagen"] %>" class="img-fluid rounded float-right" width="350px" alt="" />
+    <div class="card-body">
+
+        <h2>
+            <asp:Label ID="lblNombre" runat="server"></asp:Label>
+        </h2>
+        <p>
+            <asp:Label ID="lblDescripcion" runat="server" Text="Label"></asp:Label>
+        </p>
+        <p>
+
+            <% = (decimal)Session["precio"] %>
+
+        </p>
+        <p>
+
+
+            <a href="Productos" class="btn btn-outline-primary" role="button">Volver</a>
+            <a href="Carrito.aspx?id=<% = Session["id"] %>&precio=<%= (decimal)Session["precio"] %>"
+                class="btn btn-outline-success" role="button">Agregar al Carrito</a>
+
+        </p>
+    </div>
+    </div>
 </asp:Content>

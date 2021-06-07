@@ -17,7 +17,9 @@
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <img src='<%#Eval("producto.UrlImagen")%>' width="50px" class="img-thumbnail" /></td>
+                            <img src='<%#Eval("producto.UrlImagen")%>' width="50px"  class="img-fluid img-thumbnail" />
+
+                        </td>
                         <td><%#Eval("producto.Nombre")%></td>
 
                         <td><%#Eval("producto.Id")%> </td>

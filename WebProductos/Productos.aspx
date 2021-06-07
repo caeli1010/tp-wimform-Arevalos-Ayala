@@ -1,7 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Productos.aspx.cs" Inherits="WebProductos.Productos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <%--<asp:GridView ID="dvgDetalle" runat="server"></asp:GridView>--%>
+    <hr class="py-4"/>
+   <h4 class="justify-content-center">Categorias </h4>
+  <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link btn btn-outline-success" href="#">Electrodomesticos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link btn btn-outline-success" href="#">Telefonos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link btn btn-outline-success" href="#">Impresoras</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link btn btn-outline-success" href="#" >Otros</a>
+  </li>
+</ul>
+    <hr class="py-4"/>
     <div class="container-fluid">
     <div class="row pt-4 mx-n2">
         <% foreach (dominio.Articulo item in lista)
@@ -9,7 +25,7 @@
 
         <div class=" col-lg-3 col-md-4 col-sm-6 px-2 mb-4"> 
         <div class="card "> 
-            <img class="card-img-top img-thumbnail" src="<% = item.UrlImagen %>" alt="<% = item.Nombre %>">
+            <img class=" img-fluid  img-thumbnail"  width="300px" src="<% = item.UrlImagen %>" alt="<% = item.Nombre %>">
             <div class="card-body">
                 <h5 class="card-title"><% = item.Nombre  %></h5>
                 <p class="card-text">
@@ -28,12 +44,8 @@
 
                 <a href="Detalle.aspx?id=<% = item.Id %>" class="btn btn-primary" role="button">Ver Detalle</a>
                 </p>
-  
-                <%--<asp:Label ID="lblCantidad" CssClass="text-secondary" runat="server" Text="Cantidad"></asp:Label>
-                <div class="col-md-4">
-                    <asp:TextBox ID="txtCantidad" CssClass="form-control " runat="server" TextMode="Number" MaxLength="3" BorderStyle="Outset" Text="1" OnTextChanged="txtCantidad_TextChanged"></asp:TextBox>
-                </div>--%>
-                  <a href="Carrito.aspx?id=<% = item.Id %>&precio=<%=item.Precio %>" class="btn btn-default" role="button">Agregar al Carrito</a>
+
+                  <a href="Carrito.aspx?id=<% = item.Id %>&precio=<%=item.Precio %>" class="btn btn-outline-success" role="button">Agregar al Carrito</a>
             </div>
         </div>
         </div>
