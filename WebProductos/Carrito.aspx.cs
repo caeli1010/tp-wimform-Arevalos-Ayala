@@ -17,6 +17,7 @@ namespace WebProductos
         {
         Pila = (List<ItemCarrito>)Session["listaArticulos"];
 
+            
             if (Pila == null)
                 Pila = new List<ItemCarrito>();
 
@@ -24,18 +25,19 @@ namespace WebProductos
             {
                 if (Request.QueryString["id"] != null)
                 {
-
+                    
                     if (Pila.Find(x => x.producto.Id.ToString() == Request.QueryString["id"]) == null)
                     {
-
+                                  
                         List<Articulo> seleccionado = (List<Articulo>)Session["articulos"];
                         Articulo artSel = (Articulo)seleccionado.Find(x => x.Id.ToString() == Request.QueryString["id"]);
                         ItemCarrito itemseleccionado   = new ItemCarrito();
                         itemseleccionado.producto = (Articulo)artSel;
-                        itemseleccionado.cantidad = 1;
+                        itemseleccionado.cantidad =1;
                         Pila.Add(itemseleccionado);
                     }
                 }
+               
 
                 //Repeater
                 repetidor.DataSource = Pila;
@@ -58,26 +60,46 @@ namespace WebProductos
             repetidor.DataBind();
         }
 
-        protected void txtCantidad_TextChanged(object sender, EventArgs e)
+        protected void btnMas_Click(object sender, EventArgs e)
         {
+            var argument = ((Button)sender).CommandArgument;
+            List<Articulo> seleccionado = (List<Articulo>)Session["articulos"];
+            Articulo artPrecioUnitario = (Articulo)seleccionado.Find(x => x.Id.ToString() == argument);
 
-            //Session["precio"] = ((TextBox)sender).ID;
+            List<ItemCarrito> Pila = (List<ItemCarrito>)Session["listaArticulos"];
+            ItemCarrito sumarcantidad = Pila.Find(x => x.producto.Id.ToString() == argument);
 
-            //var argument = ((TextBox)sender).ID.ToString();
-            //List<ItemCarrito> Pila = (List<ItemCarrito>)Session["listaArticulos"];
-            //ItemCarrito seleccionado = Pila.Find(x => x.producto.Id.ToString() == argument);
-            //Pila.Remove(seleccionado);
+            Pila.Remove(sumarcantidad);
 
-            //ItemCarrito subtotal = new ItemCarrito();
+            sumarcantidad.cantidad += 1;
+            sumarcantidad.producto.Precio = (decimal)(artPrecioUnitario.Precio * (int)sumarcantidad.cantidad);
 
-            //Session["precio"] = (decimal)(seleccionado.producto.Precio * int.Parse(((TextBox)sender).Text));
-            //Session["precio"] = (decimal)(seleccionado.producto.Precio * 10);
-            //subtotal.producto.Precio = (decimal)Session["precio"];
-            //Pila.Add(subtotal);
-            //Session["listaArticulos"] = Pila;
-            //repetidor.DataSource = null;
-            //repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];
-            //repetidor.DataBind();
+
+            Pila.Add(sumarcantidad);
+
+            Session["listaArticulos"] = Pila;
+            repetidor.DataSource = null;
+            repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];
+            repetidor.DataBind();
+
+        }
+
+        protected void btnMenos_Click(object sender, EventArgs e)
+        {
+            var argument = ((Button)sender).CommandArgument;
+            List<ItemCarrito> Pila = (List<ItemCarrito>)Session["listaArticulos"];
+            ItemCarrito sumarcantidad = Pila.Find(x => x.producto.Id.ToString() == argument);
+            sumarcantidad.cantidad -= 1;
+            int auxiliar = (sumarcantidad.cantidad==0)? 1 : (int)sumarcantidad.cantidad;
+            Pila.Remove(sumarcantidad);
+            sumarcantidad.producto.Precio = sumarcantidad.producto.Precio * (int)auxiliar;
+
+            Pila.Add(sumarcantidad);
+
+            Session["listaArticulos"] = Pila;
+            repetidor.DataSource = null;
+            repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];
+            repetidor.DataBind();
         }
     }
 }
