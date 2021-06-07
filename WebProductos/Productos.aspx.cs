@@ -11,15 +11,21 @@ namespace WebProductos
 {
     public partial class Productos : System.Web.UI.Page
     {
-        public List<Articulo> lista;
-        
+        public List<Articulo> lista; 
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
-            lista = negocio.listar();
-            Session.Add("articulos", lista);
+                if (Session["articulos"] == null)
+                {
+                    lista = negocio.listar();
+                    Session.Add("articulos", lista);
+                }
+                else
+                {
+                    lista = (List<Articulo>)Session["articulos"];
+                }
             }
             catch (Exception error)
             {
