@@ -82,7 +82,7 @@ namespace WebProductos
 
 
             Pila.Add(sumarcantidad);
-            Session["cuantos"] = (Pila.Count > 0) ? (int)Session["cuantos"]+1 : 0;
+            Session["cuantos"] = (Pila.Count > 0) ? (int)Session["cuantos"]+1 : 1;
             Session["listaArticulos"] = Pila;
             repetidor.DataSource = null;
             repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];

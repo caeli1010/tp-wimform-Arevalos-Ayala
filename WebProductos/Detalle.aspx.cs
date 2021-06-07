@@ -16,9 +16,8 @@ namespace WebProductos
         {
             leer = new ArticuloNegocio();
 
-            int id = int.Parse(Request.QueryString["id"]);
             List<Articulo> listado = (List<Articulo>)Session["articulos"];
-            Articulo seleccionado = listado.Find(X => X.Id == id);
+            Articulo seleccionado = listado.Find(X => X.Id.ToString() == Request.QueryString["id"]);
             lblNombre.Text= seleccionado.Nombre;
             lblDescripcion.Text= seleccionado.Descripcion;
             Session["id"]= (int)seleccionado.Id;
