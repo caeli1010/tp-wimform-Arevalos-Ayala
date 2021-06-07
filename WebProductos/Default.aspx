@@ -6,19 +6,15 @@
 
             <%--<h5 class="justify-content-center display-5 ">Categorias </h5>--%>
             <ul class="nav justify-content-center">
+                <% foreach (dominio.Categoria item in categoria)
+                {%>
 
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Celulares">Celulares</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Televisores">Televisores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Media">Media</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Audio">Audio</a>
-                </li>
+                    <li class="nav-item">
+                    <a class="nav-link btn btn-outline-success" href="#"><% = item.Descripcion %></a>
+                    </li>
+
+                  <%} %>
+               
             </ul>
         </div>
 

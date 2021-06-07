@@ -12,9 +12,11 @@ namespace WebProductos
     public partial class Detalle : System.Web.UI.Page
     {
         public ArticuloNegocio leer;
+        public List<Categoria> categoria;
         protected void Page_Load(object sender, EventArgs e)
         {
             leer = new ArticuloNegocio();
+            CategoriaNegocio negocio = new CategoriaNegocio();
 
             List<Articulo> listado = (List<Articulo>)Session["articulos"];
             Articulo seleccionado = listado.Find(X => X.Id.ToString() == Request.QueryString["id"]);
@@ -24,6 +26,7 @@ namespace WebProductos
             Session["precio"]= seleccionado.Precio.ToString("N");
             Session["imagen"]= seleccionado.UrlImagen;
 
+            categoria = negocio.listar();
 
          }
 

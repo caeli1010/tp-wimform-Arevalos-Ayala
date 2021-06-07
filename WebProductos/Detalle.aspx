@@ -5,19 +5,14 @@
  
    <h5 class="justify-content-center display-5">Categorias </h5>
   <ul class="nav justify-content-center">
-  
+  <% foreach (dominio.Categoria item in categoria)
+      {%>
+
     <li class="nav-item">
-    <a class="nav-link btn btn-outline-success" href="#">Electrodomesticos</a>
+    <a class="nav-link btn btn-outline-success" href="#"><% = item.Descripcion %></a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link btn btn-outline-success" href="#">Telefonos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link btn btn-outline-success" href="#">Impresoras</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link btn btn-outline-success" href="#" >Otros</a>
-  </li>
+
+      <%} %>
 </ul>
     <hr class="py-1"/>
     <div class=" row">
