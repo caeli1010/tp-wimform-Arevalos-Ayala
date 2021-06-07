@@ -41,16 +41,16 @@
             <ul class="nav justify-content-center">
 
                 <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos">Electrodomesticos</a>
+                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Celulares">Celulares</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos">Telefonos</a>
+                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Televisores">Televisores</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos">Impresoras</a>
+                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Media">Media</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos">Otros</a>
+                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Audio">Audio</a>
                 </li>
             </ul>
         </div>
