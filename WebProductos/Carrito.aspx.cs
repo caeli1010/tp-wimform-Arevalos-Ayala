@@ -87,14 +87,19 @@ namespace WebProductos
         protected void btnMenos_Click(object sender, EventArgs e)
         {
             var argument = ((Button)sender).CommandArgument;
-            List<ItemCarrito> Pila = (List<ItemCarrito>)Session["listaArticulos"];
-            ItemCarrito sumarcantidad = Pila.Find(x => x.producto.Id.ToString() == argument);
-            sumarcantidad.cantidad -= 1;
-            int auxiliar = (sumarcantidad.cantidad==0)? 1 : (int)sumarcantidad.cantidad;
-            Pila.Remove(sumarcantidad);
-            sumarcantidad.producto.Precio = sumarcantidad.producto.Precio * (int)auxiliar;
+            List<Articulo> seleccionado = (List<Articulo>)Session["articulos"];
+            Articulo artPrecioUnitario = (Articulo)seleccionado.Find(x => x.Id.ToString() == argument);
 
-            Pila.Add(sumarcantidad);
+            List<ItemCarrito> Pila = (List<ItemCarrito>)Session["listaArticulos"];
+            ItemCarrito restarCantidad = Pila.Find(x => x.producto.Id.ToString() == argument);
+
+            Pila.Remove(restarCantidad);
+
+            restarCantidad.cantidad -= 1;
+            restarCantidad.cantidad = (restarCantidad.cantidad <=0 )?1:(int)restarCantidad.cantidad;
+            restarCantidad.producto.Precio = (decimal)(artPrecioUnitario.Precio * (int)restarCantidad.cantidad);
+
+            Pila.Add(restarCantidad);
 
             Session["listaArticulos"] = Pila;
             repetidor.DataSource = null;
