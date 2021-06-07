@@ -37,13 +37,13 @@ namespace WebProductos
                         Pila.Add(itemseleccionado);
                     }
                 }
-               
+                Session["cuantos"] = (Pila.Count > 0) ? (int)Pila.Count() : 0;
 
                 //Repeater
                 repetidor.DataSource = Pila;
                 repetidor.DataBind();
             }
-
+            Session["cuantos"] = (Pila.Count > 0) ? (int)Pila.Count() : 0;
             Session.Add("listaArticulos", Pila);
            
         }
@@ -76,7 +76,7 @@ namespace WebProductos
 
 
             Pila.Add(sumarcantidad);
-
+            Session["cuantos"] = (Pila.Count > 0) ? (int)Pila.Count() : 0;
             Session["listaArticulos"] = Pila;
             repetidor.DataSource = null;
             repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];
@@ -100,7 +100,7 @@ namespace WebProductos
             restarCantidad.producto.Precio = (decimal)(artPrecioUnitario.Precio * (int)restarCantidad.cantidad);
 
             Pila.Add(restarCantidad);
-
+            Session["cuantos"] = (Pila.Count > 0) ? (int)Pila.Count() : 0;
             Session["listaArticulos"] = Pila;
             repetidor.DataSource = null;
             repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];

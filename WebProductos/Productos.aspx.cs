@@ -14,6 +14,7 @@ namespace WebProductos
         public List<Articulo> lista; 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {

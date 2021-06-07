@@ -15,6 +15,7 @@ namespace WebProductos
         protected void Page_Load(object sender, EventArgs e)
         {
             listaArticulo = new List<Articulo>();
+
          
         }
 
