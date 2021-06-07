@@ -37,17 +37,20 @@ namespace WebProductos
                         itemseleccionado.subTotal = itemseleccionado.producto.Precio;
 
                         Pila.Add(itemseleccionado);
+                        Session["cuantos"] = (Pila.Count() > 0) ? (int)Pila.Count() : 0;
                     }
                 }
-                Session["cuantos"] = (Pila.Count > 0) ? (int)Pila.Count() : 0;
+                
 
                 //Repeater
                 repetidor.DataSource = Pila;
                 repetidor.DataBind();
             }
-            Session["cuantos"] = (Pila.Count > 0) ? (int)Pila.Count() : 0;
+
             Session.Add("listaArticulos", Pila);
-           
+    
+            
+
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -57,6 +60,7 @@ namespace WebProductos
             ItemCarrito eliminado = Pila.Find(x => x.producto.Id.ToString() == argument);
             Pila.Remove(eliminado);
             Session["listaArticulos"] = Pila;
+            Session["cuantos"] = (Pila.Count > 0 || Session["cuantos"] != null) ? (int)Pila.Count  : 0;
             repetidor.DataSource = null;
             repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];
             repetidor.DataBind();
@@ -78,7 +82,7 @@ namespace WebProductos
 
 
             Pila.Add(sumarcantidad);
-            Session["cuantos"] = (Pila.Count > 0) ? (int)Pila.Count() : 0;
+            Session["cuantos"] = (Pila.Count > 0) ? (int)Session["cuantos"]+1 : 0;
             Session["listaArticulos"] = Pila;
             repetidor.DataSource = null;
             repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];
@@ -102,7 +106,7 @@ namespace WebProductos
             restarCantidad.subTotal = (decimal)((decimal)Session["axuliar"] * (int)restarCantidad.cantidad);
 
             Pila.Add(restarCantidad);
-            Session["cuantos"] = (Pila.Count > 0) ? (int)Pila.Count() : 0;
+            Session["cuantos"] = (Pila.Count > 0 && (int)Session["cuantos"] >0) ? (int)Session["cuantos"] - 1 : 1;
             Session["listaArticulos"] = Pila;
             repetidor.DataSource = null;
             repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];

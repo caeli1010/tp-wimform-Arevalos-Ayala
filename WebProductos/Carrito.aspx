@@ -33,14 +33,15 @@
                                 OnClick="btnMas_Click"
                                 CommandArgument='<%#Eval("producto.Id")%>'
                                 runat="server" />
+                           
                             <asp:Button
                                 Text="-"
-                                CssClass="btn btn-outline-danger"
+                                CssClass="btn btn-outline-danger "
                                 ID="btnMenos"
                                 OnClick="btnMenos_Click"
                                 CommandArgument='<%#Eval("producto.Id")%>'
                                 runat="server" />
-
+                          
                         </td>
                         <td>
                             <i class="bi bi-trash text-warning"></i>
