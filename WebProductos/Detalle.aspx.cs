@@ -22,7 +22,7 @@ namespace WebProductos
             lblNombre.Text= seleccionado.Nombre;
             lblDescripcion.Text= seleccionado.Descripcion;
             Session["id"]= (int)seleccionado.Id;
-            Session["precio"]= (decimal)seleccionado.Precio;
+            Session["precio"]= seleccionado.Precio.ToString("N");
             Session["imagen"]= seleccionado.UrlImagen;
 
 

@@ -27,6 +27,9 @@
   }
   .altura{
       min-height: 600px;
+  } 
+  .altura-img{
+     max-width: 350px;
   }
   </style>
     <%--<webopt:bundlereference runat="server" path="~/Content/css" />--%>

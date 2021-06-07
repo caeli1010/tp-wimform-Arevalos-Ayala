@@ -1,10 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Detalle.aspx.cs" Inherits="WebProductos.Detalle" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-   <h4 class="justify-content-center">Categorias </h4>
+ <hr class="py-3"/>
+ 
+   <h5 class="justify-content-center display-5">Categorias </h5>
   <ul class="nav justify-content-center">
-  <li class="nav-item">
+  
+    <li class="nav-item">
     <a class="nav-link btn btn-outline-success" href="#">Electrodomesticos</a>
   </li>
   <li class="nav-item">
@@ -17,9 +19,9 @@
     <a class="nav-link btn btn-outline-success" href="#" >Otros</a>
   </li>
 </ul>
-        <hr class="py-4"/>
+    <hr class="py-1"/>
     <div class=" row">
-        <img src="<% = Session["imagen"] %>" class="img-fluid rounded float-right" width="350px" alt="" />
+        <img src="<% = Session["imagen"] %>" class="img-fluid rounded float-right altura-img" alt="" />
     <div class="card-body">
 
         <h2>
@@ -30,14 +32,14 @@
         </p>
         <p>
 
-            <% = (decimal)Session["precio"] %>
+            <% = Session["precio"] %>
 
         </p>
         <p>
 
 
             <a href="Productos" class="btn btn-outline-primary" role="button">Volver</a>
-            <a href="Carrito.aspx?id=<% = Session["id"] %>&precio=<%= (decimal)Session["precio"] %>"
+            <a href="Carrito.aspx?id=<% = Session["id"] %>&precio=<%= Session["precio"] %>"
                 class="btn btn-outline-success" role="button">Agregar al Carrito</a>
 
         </p>
