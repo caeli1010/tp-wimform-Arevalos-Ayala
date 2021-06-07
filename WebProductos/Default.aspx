@@ -1,6 +1,26 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebProductos._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="col-md-12">
+            <hr class="py-3" />
+
+            <%--<h5 class="justify-content-center display-5 ">Categorias </h5>--%>
+            <ul class="nav justify-content-center">
+
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Celulares">Celulares</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Televisores">Televisores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Media">Media</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Audio">Audio</a>
+                </li>
+            </ul>
+        </div>
 
     <div class="row">
         <div id="demo" class="carousel slide " data-ride="carousel">
@@ -34,28 +54,29 @@
             </a>
         </div>
         </div>
-        <div class="col-md-12">
-            <hr class="py-3" />
-
-            <%--<h5 class="justify-content-center display-5 ">Categorias </h5>--%>
-            <ul class="nav justify-content-center">
-
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Celulares">Celulares</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Televisores">Televisores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Media">Media</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="Productos?cat=Audio">Audio</a>
-                </li>
-            </ul>
-        </div>
-            
-
+        
+    <div class="row">
+       <div class="col-3 container">
+            <p>
+                <img class="rounded" src="img/barraImg.PNG" " />
+            </p>
+         </div>
+         <div class="col-3">
+            <p>
+                <img class="rounded" src="img/barraImg2.PNG" " />
+            </p>
+         </div>
+         <div class="col-3">
+            <p>
+                <img class="rounded" src="img/barraImg3.PNG" " />
+            </p>
+         </div>
+         <div class="col-3">
+            <p>
+                <img class="rounded" src="img/barraImg4.PNG" " />
+            </p>
+         </div>
+    </div>
         <%--<div class="col-md-6">
             <h2>Get more libraries</h2>
             <p>
