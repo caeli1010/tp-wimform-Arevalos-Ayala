@@ -34,6 +34,8 @@ namespace WebProductos
                         ItemCarrito itemseleccionado   = new ItemCarrito();
                         itemseleccionado.producto = (Articulo)artSel;
                         itemseleccionado.cantidad =1;
+                        itemseleccionado.subTotal = itemseleccionado.producto.Precio;
+
                         Pila.Add(itemseleccionado);
                     }
                 }
@@ -68,11 +70,11 @@ namespace WebProductos
 
             List<ItemCarrito> Pila = (List<ItemCarrito>)Session["listaArticulos"];
             ItemCarrito sumarcantidad = Pila.Find(x => x.producto.Id.ToString() == argument);
-
+            Session["axuliar"] = (decimal)artPrecioUnitario.Precio;
             Pila.Remove(sumarcantidad);
 
             sumarcantidad.cantidad += 1;
-            sumarcantidad.producto.Precio = (decimal)(artPrecioUnitario.Precio * (int)sumarcantidad.cantidad);
+            sumarcantidad.subTotal = (decimal)((decimal)Session["axuliar"] * (int)sumarcantidad.cantidad);
 
 
             Pila.Add(sumarcantidad);
@@ -92,12 +94,12 @@ namespace WebProductos
 
             List<ItemCarrito> Pila = (List<ItemCarrito>)Session["listaArticulos"];
             ItemCarrito restarCantidad = Pila.Find(x => x.producto.Id.ToString() == argument);
-
+            Session["axuliar"] = (decimal)artPrecioUnitario.Precio;
             Pila.Remove(restarCantidad);
 
             restarCantidad.cantidad -= 1;
             restarCantidad.cantidad = (restarCantidad.cantidad <=0 )?1:(int)restarCantidad.cantidad;
-            restarCantidad.producto.Precio = (decimal)(artPrecioUnitario.Precio * (int)restarCantidad.cantidad);
+            restarCantidad.subTotal = (decimal)((decimal)Session["axuliar"] * (int)restarCantidad.cantidad);
 
             Pila.Add(restarCantidad);
             Session["cuantos"] = (Pila.Count > 0) ? (int)Pila.Count() : 0;

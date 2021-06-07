@@ -22,7 +22,7 @@
 
                         <td><%#Eval("producto.Id")%> </td>
 
-                        <td><%#Eval("producto.Precio")%></td>
+                        <td><%#Eval("subTotal")%></td>
                         <td><%#Eval("cantidad")%>
                             <asp:Button
                                 Text="+"
