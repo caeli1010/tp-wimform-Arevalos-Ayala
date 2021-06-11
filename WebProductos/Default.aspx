@@ -8,9 +8,8 @@
             <ul class="nav justify-content-center">
                 <% foreach (dominio.Categoria item in categoria)
                 {%>
-
                     <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="#"><% = item.Descripcion %></a>
+                    <a class="nav-link btn btn-outline-success" href="Productos.aspx?id=<% =item.Id %>"><% = item.Descripcion %></a>
                     </li>
 
                   <%} %>

@@ -13,6 +13,7 @@ namespace WebProductos
     {
         public List<Articulo> lista;
         public List<Categoria> categoria;
+        public int id;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,7 +29,12 @@ namespace WebProductos
                 }
                 else
                 {
-                    lista = (List<Articulo>)Session["articulos"];
+                    if (Request.QueryString["id"] != null)
+                    {
+                        id = int.Parse(Request.QueryString["id"]);
+ 
+                    }
+                        lista = (List<Articulo>)Session["articulos"];
                 }
             }
             catch (Exception error)

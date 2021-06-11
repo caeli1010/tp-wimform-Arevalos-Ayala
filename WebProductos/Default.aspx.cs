@@ -12,6 +12,7 @@ namespace WebProductos
     public partial class _Default : Page
     {
         public List<Categoria> categoria;
+        public List<Articulo> lista;
         protected void Page_Load(object sender, EventArgs e)
         {
             CategoriaNegocio negocio = new CategoriaNegocio();
