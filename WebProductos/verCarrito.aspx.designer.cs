@@ -13,5 +13,23 @@ namespace WebProductos
 
     public partial class verCarrito
     {
+
+        /// <summary>
+        /// Control btnTotal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTotal;
+
+        /// <summary>
+        /// Control btnEnvioDomicilio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEnvioDomicilio;
     }
 }

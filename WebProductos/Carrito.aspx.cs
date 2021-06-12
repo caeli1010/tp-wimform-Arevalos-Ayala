@@ -10,13 +10,15 @@ using Microsoft.Ajax.Utilities;
 
 namespace WebProductos
 {
+    
     public partial class Carrito : System.Web.UI.Page
     {
         public List<ItemCarrito> Pila;
+        public decimal totalPagar;
+        public int id;
         protected void Page_Load(object sender, EventArgs e)
         {
         Pila = (List<ItemCarrito>)Session["listaArticulos"];
-
             
             if (Pila == null)
                 Pila = new List<ItemCarrito>();
@@ -47,9 +49,7 @@ namespace WebProductos
                 repetidor.DataBind();
             }
 
-            Session.Add("listaArticulos", Pila);
-    
-            
+            Session.Add("listaArticulos", Pila);  
 
         }
 
@@ -65,7 +65,7 @@ namespace WebProductos
             repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];
             repetidor.DataBind();
         }
-
+        
         protected void btnMas_Click(object sender, EventArgs e)
         {
             var argument = ((Button)sender).CommandArgument;
@@ -76,6 +76,8 @@ namespace WebProductos
             ItemCarrito sumarcantidad = Pila.Find(x => x.producto.Id.ToString() == argument);
             Session["axuliar"] = (decimal)artPrecioUnitario.Precio;
             Pila.Remove(sumarcantidad);
+
+            id = sumarcantidad.producto.Id;
 
             sumarcantidad.cantidad += 1;
             sumarcantidad.subTotal = (decimal)((decimal)Session["axuliar"] * (int)sumarcantidad.cantidad);
@@ -89,7 +91,6 @@ namespace WebProductos
             repetidor.DataBind();
 
         }
-
         protected void btnMenos_Click(object sender, EventArgs e)
         {
             var argument = ((Button)sender).CommandArgument;
@@ -101,6 +102,8 @@ namespace WebProductos
             Session["axuliar"] = (decimal)artPrecioUnitario.Precio;
             Pila.Remove(restarCantidad);
 
+            id = restarCantidad.producto.Id;
+
             restarCantidad.cantidad -= 1;
             restarCantidad.cantidad = (restarCantidad.cantidad <=0 )?1:(int)restarCantidad.cantidad;
             restarCantidad.subTotal = (decimal)((decimal)Session["axuliar"] * (int)restarCantidad.cantidad);
@@ -111,6 +114,15 @@ namespace WebProductos
             repetidor.DataSource = null;
             repetidor.DataSource = (List<ItemCarrito>)Session["listaArticulos"];
             repetidor.DataBind();
+
+            //Pila.Add((ItemCarrito)Session["listatArticulos"]);
+        }
+
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+            var argument = ((Button)sender).CommandArgument;
+            Session["listaArticulos"] = Pila.Find(x => x.producto.Id.ToString() == argument);
+            Response.Redirect("verCarrito");
         }
     }
 }

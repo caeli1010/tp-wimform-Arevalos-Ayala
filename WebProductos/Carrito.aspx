@@ -52,10 +52,20 @@
                                 CommandArgument='<%#Eval("producto.Id")%>'
                                 runat="server" />
                         </td>
-
+                        <td>
+                            <i class=" text-danger"></i>
+                            <asp:Button ID="btnComprar"
+                                CssClass="  btn btn-outline-warning"
+                                CommandArgument='<%#Eval("producto.Id")%>'
+                                runat="server" 
+                                Onclick="btnComprar_Click"
+                                Text="Comprar" />
+                        </td>
                     </tr>
+                   
                 </ItemTemplate>
             </asp:Repeater>
+            
         </tbody>
     </table>
 
