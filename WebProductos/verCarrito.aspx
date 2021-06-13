@@ -6,8 +6,8 @@
         <td>Total a pagar</td>
     </tr>
     <tr>
-        <% foreach (dominio.ItemCarrito item in productos){ %>
-        <td><% =item.subTotal %> </td>
+       
+        <td> <asp:Label Text="" runat="server" ID="lblTotal"/>  </td>
         <% } %>
         <%--<td><asp:Label ID="lblCosto" runat="server" Text="$ 350"></asp:Label></td>
         <td><%  %></td>--%>

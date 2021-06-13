@@ -120,8 +120,6 @@ namespace WebProductos
 
         protected void btnComprar_Click(object sender, EventArgs e)
         {
-            var argument = ((Button)sender).CommandArgument;
-            Session["listaArticulos"] = Pila.Find(x => x.producto.Id.ToString() == argument);
             Response.Redirect("verCarrito");
         }
     }

@@ -11,14 +11,15 @@ namespace WebProductos
     public partial class verCarrito : System.Web.UI.Page
     {
         public List<ItemCarrito> productos;
-        public decimal total;
+        public decimal total=0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            productos = Session["listaArticulos"];
-            //ItemCarrito seleccionado = productos);
-            //int id = selecionado.producto.Id;
-            //total = selecionado.subTotal;
-
+            productos = (List<ItemCarrito>)Session["listaArticulos"];
+            foreach (ItemCarrito item in productos)
+            {
+               total+= (decimal)item.subTotal;
+            }
+            lblTotal.Text = total.ToString();
         }
     }
 }
